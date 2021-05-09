@@ -3,15 +3,26 @@ Configurazioni base
 -------------- */
 
 body, html{
+    margin: 0;
+    padding: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body{
-    margin: 0px 30px;
+    background: transparent;
 }
+
+
 
 *{
     box-sizing: border-box;
+}
+
+.page{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: white;
 }
 
 h1{font-size: 60px;}
@@ -36,6 +47,21 @@ h6{font-size: 15px;}
 }
 
 /* ----------
+IMG SUBBACKGROUND
+-------------- */
+
+.img_subbackground{
+    height: 100%;
+    width: 100%;
+    background: url(img/images-console.png);
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    /* left: calc(100%-75%); */
+    align-items: center;
+}
+
+/* ----------
 HEADER
 -------------- */
 
@@ -45,17 +71,18 @@ HEADER
     top: 0;
     left: 0;
     display: flex;
-    width: calc(100% - 60px);
+    width: 100%;
     height: 80px;
     justify-content: space-between;
     align-items: center;
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);
-    margin: 0px 30px;
+    z-index: 10;
 }
 
 .logo{
     display: flex;
+    align-items: center;
     color: #fff;
     margin: 0 5px;
     z-index: 10;
@@ -148,6 +175,10 @@ i.fas.fa-bars.fa-2x.wt {
         right: 45px;
         z-index: 10;
     }
+
+    .logo h2{
+        font-size: 30px;
+    }
 }
 
 
@@ -182,6 +213,14 @@ SECTION -- SHOWCASE
     .showcase_content_img{
         text-align: center;
     }
+
+    .showcase_content_img h1{
+        font-size: 50px;
+    }
+
+    .showcase_content_img h3{
+        font-size: 25px;
+    }
     
 }
 
@@ -192,7 +231,8 @@ SECTION -- CHOICE
 .videogame_choice{
     border: 2px solid red;
     display: flex;
-    margin: 40px 0px;
+    margin-top: 50px;
+    background: white;
 }
 
 .img_videogame{
@@ -213,7 +253,7 @@ SECTION -- CHOICE
 .accessory_choice{
     border: 2px solid red;
     display: flex;
-    margin: 40px 0px;
+    margin-bottom: 50px;
 }
 
 .img_accessory{
@@ -248,4 +288,46 @@ SECTION -- CHOICE
     .text_accessory{
         width: 100%;
     }
+}
+
+
+/* ----------
+TRANSPARENT PLATFORM IMG
+-------------- */
+
+.trasparent_platform_img{
+    border-top: 30px solid white;
+    border-bottom: 30px solid white;
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background-color: transparent;
+}
+
+
+/* ----------
+FOOTER
+-------------- */
+
+.footer{
+    height: 80px;
+    width: 100%;
+}
+
+.social_footer{
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social_footer a {
+    color: white;
+}
+
+.social_footer a:hover{
+    color: chartreuse;
+    transition: 0.5s all ease-in-out;
 }
