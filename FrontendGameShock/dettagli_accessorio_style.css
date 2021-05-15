@@ -175,6 +175,41 @@ i.fas.fa-bars.fa-2x.wt {
     }
 }
 
+/* ----------
+SHOWCASE ACCESSORIO
+-------------- */
+
+.showcase_accessorio{
+    margin-top: 80px;
+    display: flex;
+    width: 100%;
+}
+
+.img_accessorio{
+    border: 3px solid grey;
+    width: 50%;
+    height: 500px;
+    background: url(/img/assettoCorsa.jpg) center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.info_accessorio{
+    width: 50%;
+    text-align: center;
+}
+
+.new_price{
+    border-radius: 20px;
+    background: green;
+    padding: 10px;
+}
+
+.old_price{
+    border-radius: 20px;
+    background: red;
+    padding: 10px;
+}
 
 
 
