@@ -179,22 +179,22 @@ i.fas.fa-bars.fa-2x.wt {
 SHOWCASE ACCESSORIO
 -------------- */
 
-.showcase_accessorio{
+.showcase_videogame{
     border: 2px solid red;
     margin-top: 80px;
     display: flex;
     width: 100%;
 }
 
-.img_accessorio{
+.img_videogame{
     border: 2px solid grey;
     width: 50%;
-    background: url(/img/controller.jpg) center center;
+    background: url(/img/battlefield_deluxe_edition.jpg) center center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.info_accessorio{
+.info_videogame{
     width: 50%;
     text-align: center;
     border: 2px solid green;
@@ -210,6 +210,10 @@ SHOWCASE ACCESSORIO
     border-radius: 20px;
     background: red;
     padding: 10px;
+}
+
+.more_info p {
+    font-size: 30px;
 }
 
 @media (max-width: 768px){
