@@ -175,52 +175,41 @@ i.fas.fa-bars.fa-2x.wt {
     }
 }
 
-/* ----------
-SHOWCASE ACCESSORIO
--------------- */
+/* --------
+TABLE 
+-------------*/
 
-.showcase_accessorio{
+table {
+    /*border-collapse: collapse;*/
     border: 2px solid red;
-    margin-top: 80px;
-    display: flex;
-    width: 100%;
-}
-
-.img_accessorio{
-    border: 2px solid grey;
-    width: 50%;
-    background: url(/img/controller.jpg) center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.info_accessorio{
-    width: 50%;
+    margin: auto;
+    letter-spacing: 1px;
+    border-spacing: 30px;
     text-align: center;
-    border: 2px solid green;
 }
 
-.new_price{
-    border-radius: 20px;
-    background: green;
-    padding: 10px;
+caption {
+    font-size: 70px;
+    margin-top: 50px;
+    margin-bottom: -40px;
 }
 
-.old_price{
-    border-radius: 20px;
-    background: red;
-    padding: 10px;
+.carta_sconti {
+    margin-top: -15px;
 }
 
-@media (max-width: 768px){
-    .showcase_accessorio {
-        flex-wrap: wrap;
-    }
+td.riga , th {
+    font-size: 40px;
+    font-weight: bold;
 }
 
+td {
+    font-size: 30px;
+}
 
-
-
+.chiuso {
+    color: red;
+}
 
 
 /* ----------
