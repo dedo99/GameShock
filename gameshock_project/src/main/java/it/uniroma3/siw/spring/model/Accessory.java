@@ -5,30 +5,31 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.EqualsAndHashCode.Exclude;
 import lombok.NonNull;
-import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
+@EqualsAndHashCode(callSuper = true)
+@SuperBuilder
 public class Accessory extends Item {
 
 	@NonNull
+	@Exclude
 	private String color;
 
+	@NonNull
+	@Exclude
 	private Category category;
 
+	@Exclude
 	@ManyToMany(mappedBy="accessories")
 	private List<Platform> platforms;
 
+	@Exclude
 	@ManyToMany(mappedBy="accessories")
 	private List<Amministrator> amministrators;
-
-	public Accessory(String code,String name,String description,String color) {
-		super(code,name,description);
-		this.color = color;
-	}
 }
