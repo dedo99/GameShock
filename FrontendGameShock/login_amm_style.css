@@ -17,7 +17,7 @@ h1{font-size: 60px;}
 h2{font-size: 50px;}
 h3{font-size: 35px;}
 h4{font-size: 25px;}
-h5{font-size: 20px;}
+h5{font-size: 20px; margin: 5px;}
 h6{font-size: 15px; margin: 5px;}
 
 .wt{color: white;}
@@ -153,59 +153,17 @@ i.fas.fa-bars.fa-2x.wt {
 
 
 /* ----------
-NAVDRAWER
+FORM
 -------------- */
 
-
-.navdrawer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: calc(100% - 80px);
+.form_input{
     margin-top: 80px;
-    border-right: 3px solid gray;
-    background: rgba(63,94,251,1);
-    padding: 10px;
-}
-
-.navdrawer_content{
-    background: #f2f2f2;
-    height: 100%;
     width: 100%;
-    border-radius: 20px;
-}
-
-.list_operation{
-    list-style: none;
-}
-
-.list_operation li{
-    margin: 20px 0px;
-}
-
-.list_operation li a{
-    text-decoration: none;
-    color: black;
-}
-
-.list_operation li a:hover{
-    color: rgba(219,70,252,1);
-}
-
-
-/* ----------
-CONTENT PAGE
--------------- */
-
-.content_page{
-    position: absolute;
-    top: 80px;
-    left: 250px;
-    height: calc(100% - 80px);
-    width: calc(100% - 250px);
+    height: calc(100vh - 80px);
     text-align: center;
+    padding-top: 100px;
+}
+
+.form{
+    background-color: aqua;
 }

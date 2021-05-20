@@ -156,7 +156,6 @@ i.fas.fa-bars.fa-2x.wt {
 NAVDRAWER
 -------------- */
 
-
 .navdrawer{
     display: flex;
     align-items: center;
@@ -196,7 +195,6 @@ NAVDRAWER
     color: rgba(219,70,252,1);
 }
 
-
 /* ----------
 CONTENT PAGE
 -------------- */
@@ -208,4 +206,22 @@ CONTENT PAGE
     height: calc(100% - 80px);
     width: calc(100% - 250px);
     text-align: center;
+    padding: 50px;
 }
+
+.content_page form{
+    padding-bottom: 100px;
+}
+
+.content_page form input{
+    width: 500px;
+    height: 30px;
+}
+
+.content_page form textarea{
+    width: 500px;
+    height: 100px;
+}
+
+
+
