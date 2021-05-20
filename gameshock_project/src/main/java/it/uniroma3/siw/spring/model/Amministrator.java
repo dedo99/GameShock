@@ -10,10 +10,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode.Exclude;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Data
 @NoArgsConstructor
+@SuperBuilder
 public class Amministrator {
 
 	@Id
@@ -28,15 +30,11 @@ public class Amministrator {
 	@Exclude
 	private String password;
 	
+	@Exclude
 	@ManyToMany
-	private List<VideoGame> videogames;
+	private List<Videogame> videogames;
 	
+	@Exclude
 	@ManyToMany
 	private List<Accessory> accessories;
-
-	public Amministrator(String email, String username, String password) {
-		this.email = email;
-		this.username = username;
-		this.password = password;
-	}
 }

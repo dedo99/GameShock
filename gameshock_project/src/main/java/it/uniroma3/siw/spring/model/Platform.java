@@ -6,45 +6,41 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode.Exclude;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Data
 @NoArgsConstructor
-@IdClass(PlatformPK.class)
+@SuperBuilder
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"version"}))
 public class Platform {
 
 	@Id
 	@Column(nullable=false)
 	private String name;
 
-	@Id
 	@NonNull
 	private String version;
 
 	@NonNull
+	@Exclude
 	private LocalDate releaseDate;
 
 	@ManyToOne
 	private Society society;
 	
 	@ManyToMany
-	private List<VideoGame> videogames;
+	private List<Videogame> videogames;
 	
 	@ManyToMany
 	private List<Accessory> accessories;
-
-	public Platform(String name, String version, LocalDate releaseDate,Society society) {
-		this.name = name;
-		this.version = version;
-		this.releaseDate = releaseDate;
-		this.society = society;
-		//this.items = new ArrayList<Item>();
-	}
 }

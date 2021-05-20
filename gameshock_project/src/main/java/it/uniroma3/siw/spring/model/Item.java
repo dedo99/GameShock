@@ -4,12 +4,15 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode.Exclude;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @NoArgsConstructor
 @MappedSuperclass
+@SuperBuilder
 public abstract class Item {
 
 	@Id
@@ -17,45 +20,22 @@ public abstract class Item {
 	private String code;
 	
 	@NonNull
+	@Exclude
 	private String name;
 	
 	@NonNull
+	@Exclude
 	private String description;
 	
+	@NonNull
+	@Exclude
 	private Float rating;
 	
+	@NonNull
+	@Exclude
 	private Float newPrice;
 	
+	@NonNull
+	@Exclude
 	private Float usedPrice;
-	
-	//@ManyToMany(mappedBy="items")
-	//private List<Platform> platforms;
-	
-	//@ManyToMany(mappedBy="items")
-	//private List<Amministrator> amministrators;
-	
-	public Item(String code, String name, String description) {
-		this.code = code;
-		this.name = name;
-		this.description = description;
-	}
-	
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		Item i = (Item) obj;
-		return this.getCode().equals(i.getCode());
-	}
-	
-	@Override
-	public int hashCode() {
-		return this.getCode().hashCode();
-	}
 }
