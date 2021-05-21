@@ -176,11 +176,43 @@ i.fas.fa-bars.fa-2x.wt {
 }
 
 /* --------
+CONTENT 
+-------------*/
+.content {
+    display: flex;
+    margin-top: 80px;
+    height:1783px;
+    border:2px solid red;
+    justify-content: space-between;
+}
+
+.image {
+    width:300px;
+    border: 2px solid blue;
+    background-repeat: repeat-y;
+    background-size: contain;
+}
+
+.image1 {
+    background-image: url(/img/supermario.jpg);
+}
+
+.image2 {
+    background-image: url(/img/supermario.jpg);
+}
+
+.tables {
+    width:1200px;
+    border: 2px solid blue;
+}
+
+
+
+/* --------
 TABLE 
 -------------*/
 
 table {
-    /*border-collapse: collapse;*/
     border: 2px solid red;
     margin: auto;
     letter-spacing: 1px;
@@ -189,13 +221,10 @@ table {
 }
 
 caption {
-    font-size: 70px;
-    margin-top: 50px;
-    margin-bottom: -40px;
-}
-
-.carta_sconti {
-    margin-top: -15px;
+    margin-top: 30px;
+    font-size: 80px;
+    border: 2px solid green;
+    height:130px;
 }
 
 td.riga , th {
