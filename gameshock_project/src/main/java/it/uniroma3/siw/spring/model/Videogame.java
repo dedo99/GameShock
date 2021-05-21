@@ -17,7 +17,7 @@ import lombok.experimental.SuperBuilder;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
-public class VideoGame extends Item {
+public class Videogame extends Item {
 
 	@Column(nullable=false)
 	@Exclude
