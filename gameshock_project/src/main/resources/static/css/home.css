@@ -1,0 +1,134 @@
+/* ----------
+IMG SUBBACKGROUND
+-------------- */
+
+.img_subbackground{
+    height: 100%;
+    width: 100%;
+    background: url(/images/images_console.png);
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    /* left: calc(100%-75%); */
+    align-items: center;
+}
+
+/* ----------
+SECTION -- SHOWCASE
+-------------- */
+
+.showcase{
+    border: 2px solid red;
+    margin-top: 80px;
+    height: calc(100vh - 80px);
+}
+
+.showcase_content_img{
+    border: 2px solid orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    background: url(/images/diventare_un_bravo_gamer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+@media (max-width: 768px){
+
+    .showcase_content_img{
+        text-align: center;
+    }
+
+    .showcase_content_img h1{
+        font-size: 50px;
+    }
+
+    .showcase_content_img h3{
+        font-size: 25px;
+    }
+    
+}
+
+/* ----------
+SECTION -- CHOICE
+-------------- */
+
+.videogame_choice{
+    border: 2px solid red;
+    display: flex;
+    margin-top: 50px;
+    background: white;
+}
+
+.img_videogame{
+    border: 2px solid green;
+    background: url(./img/Anime-gruppo.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    height: 500px;
+    width: 100%;
+}
+
+.text_videogame{
+    border: 2px solid blue;
+    width: 70%;
+    text-align: center;
+}
+
+.accessory_choice{
+    border: 2px solid red;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.img_accessory{
+    border: 2px solid green;
+    background: url(/images/accessori_gaming.jpg);
+    background-size: cover;
+    border-radius: 20px;
+    height: 500px;
+    width: 100%;
+}
+
+.text_accessory{
+    border: 2px solid blue;
+    width: 70%;
+    text-align: center;
+}
+
+@media (max-width: 768px){
+    
+    .videogame_choice{
+        flex-wrap: wrap;
+    }
+
+    .accessory_choice{
+        flex-wrap: wrap;
+    }
+
+    .text_videogame{
+        width: 100%;
+    }
+
+    .text_accessory{
+        width: 100%;
+    }
+}
+
+/* ----------
+TRANSPARENT PLATFORM IMG
+-------------- */
+
+.trasparent_platform_img{
+    border-top: 30px solid white;
+    border-bottom: 30px solid white;
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background-color: transparent;
+}
