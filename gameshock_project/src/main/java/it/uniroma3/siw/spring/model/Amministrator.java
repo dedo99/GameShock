@@ -32,7 +32,7 @@ public class Amministrator {
 	
 	@Exclude
 	@ManyToMany
-	private List<Videogame> videogames;
+	private List<VideoGame> videogames;
 	
 	@Exclude
 	@ManyToMany

@@ -39,7 +39,7 @@ public class Platform {
 	private Society society;
 	
 	@ManyToMany
-	private List<Videogame> videogames;
+	private List<VideoGame> videogames;
 	
 	@ManyToMany
 	private List<Accessory> accessories;
