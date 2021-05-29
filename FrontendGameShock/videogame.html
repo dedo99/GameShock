@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="videogame_style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <title>Videogame</title>
 </head>
 <body>
@@ -20,7 +22,8 @@
                 <li class="flip_menu"><a href="home.html">Home</a></li>
                 <li class="flip_menu"><a href="videogame.html">VideoGame</a></li>
                 <li class="flip_menu"><a href="accessori.html">Accessori</a></li>
-                <li class="flip_menu"><a href="">Informazioni</a></li>
+                <li class="flip_menu"><a href="informazioni.html">Informazioni</a></li>
+                <li class="flip_menu"><a href="login_amm.html">Accedi</a></li>
             </ul>
             <div class="hamburger"><i class="fas fa-bars fa-2x wt"></i></div>
         </div>
@@ -28,28 +31,47 @@
 
 
     <section class="videogame_content">
-        <h1>Videogame</h1>
+        <div class="title_and_search">
+            <h1>Videogame</h1>
+            <form action="#">
+                <input type="text" placeholder="ricerca nome videogame">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+
         <div class="collection_videogame">
             <div class="box_videogame">
-                <img src="img/2med.jpg" alt="">
-                <h2>Nome Gioco</h2>
-                <h3 class="prezzo">50$</h3>
+                <a href="dettagli_videogame.html">
+                    <img src="img/2med.jpg" alt="">
+                    <h2>Nome Gioco</h2>
+                    <h3 class="prezzo">50$</h3>
+                </a>
             </div>
+
             <div class="box_videogame">
-                <img src="img/2med.jpg" alt="">
-                <h2>Nome Gioco</h2>
-                <h3 class="prezzo">50$</h3>
+                <a href="dettagli_videogame.html">
+                    <img src="img/2med.jpg" alt="">
+                    <h2>Nome Gioco</h2>
+                    <h3 class="prezzo">50$</h3>
+                </a>
             </div>
+
             <div class="box_videogame">
-                <img src="img/2med.jpg" alt="">
-                <h2>Nome Gioco</h2>
-                <h3 class="prezzo">50$</h3>
+                <a href="dettagli_videogame.html">
+                    <img src="img/2med.jpg" alt="">
+                    <h2>Nome Gioco</h2>
+                    <h3 class="prezzo">50$</h3>
+                </a>
             </div>
+
             <div class="box_videogame">
-                <img src="img/2med.jpg" alt="">
-                <h2>Nome Gioco</h2>
-                <h3 class="prezzo">50$</h3>
+                <a href="dettagli_videogame.html">
+                    <img src="img/2med.jpg" alt="">
+                    <h2>Nome Gioco</h2>
+                    <h3 class="prezzo">50$</h3>
+                </a>
             </div>
+            
         </div>
     </section>
 

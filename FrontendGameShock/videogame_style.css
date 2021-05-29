@@ -186,6 +186,47 @@ COLLECTION VIDEOGAME
     margin-top: 80px;
 }
 
+.title_and_search{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.title_and_search h1{
+    font-family: 'Lobster', cursive;
+}
+
+.title_and_search form{
+    margin: 0px 170px;
+}
+
+.title_and_search input[type=text]{
+    border-radius: 10px;
+    height: 30px;
+    width: 200px;
+    outline: none;
+}
+
+.title_and_search input[type=text]:focus{
+    border: 2px solid orange;
+    transition: 0.5s;
+}
+
+.title_and_search input[type=submit]{
+    border-radius: 10px;
+    height: 30px;
+    width: 80px;
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);;
+    border: none;
+    color: #fff;
+}
+
+
+.title_and_search input[type=submit]:hover{
+    border: 3px solid orange;
+}
+
+
 .videogame_content h1{
     margin: 0px;
     padding: 20px 0px;
@@ -212,6 +253,12 @@ COLLECTION VIDEOGAME
     width: 25%;
     min-width: 300px;
     margin: 50px 20px;
+    border-radius: 10px;
+}
+
+.box_videogame a{
+    text-decoration: none;
+    color: black;
 }
 
 .prezzo{
@@ -220,6 +267,15 @@ COLLECTION VIDEOGAME
 }
 
 @media (max-width: 768px){
+
+    .title_and_search{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .title_and_search form{
+        margin: 0px;
+    }
 
     .box_videogame{
         margin: 20px 20px;
