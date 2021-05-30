@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="login_amm_style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Login</title>
 </head>
 <body>
@@ -29,7 +30,7 @@
     </nav>
 
     <section class="page_content">
-        <video autoplay muted>
+        <video loop="true" autoplay="autoplay" muted>
             <source src="img/Lightning - 28067.mp4" type="video/mp4">
             Il browswer non supporta il video
         </video>
@@ -39,12 +40,30 @@
                 <h6 id="text_email">Email or Username</h6>
                 <input type="text" placeholder="mario.rossi@gmail.com">
                 <h6 id="text_pwd">Password</h6>
-                <input type="password">
+                <input type="password" placeholder="password">
                 <br>
                 <input type="submit" value="Sign in">
             </form>
         </div>
     </section>
+
+
+    <script>
+        // JQUERY
+        $(document).ready(function(){
+            $( ".hamburger" ).click(function() {
+            $( ".menu" ).toggleClass( "menu--open" );
+            });
+     
+        });
+    
+        ScrollReveal().reveal('.reveal', { easing: 'cubic-bezier(.77,.34,.10,1.0)', distance: '150px' , duration: 2000, interval: 600 });
+    
+        ScrollReveal().reveal('.flip', { rotate: {x: 90, y:0, z: 90}, duration: 2000, mobile: true});
+    
+        ScrollReveal().reveal('.flip_menu', { rotate: {x: 0, y:0, z: 90}, duration: 2000, interval: 600, mobile: false});
+    
+    </script>
     
     
 </body>
