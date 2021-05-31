@@ -207,19 +207,46 @@ CONTENT PAGE
     width: calc(100% - 250px);
     text-align: center;
     padding: 50px;
+    background: url(img/scontro-controller.jpg) center center;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.content_page h3{
+    font-size: 50px;
+    background: -webkit-linear-gradient(rgba(219,70,252,1), rgba(63,94,251,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .content_item{
     border-radius: 20px;
     border: 2px solid rgba(219,70,252,1);
+    background: #fff;
     width: 100%;
     height: 120px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     margin: 20px 0px;
+}
+
+.content_item:hover{
     -webkit-box-shadow: 5px 5px 12px 3px rgba(219,70,252,0.59), 19px 15px 34px 8px rgba(63,94,251,0.53), 19px 15px 34px 8px rgba(63,94,251,0.53); 
     box-shadow: 5px 5px 12px 3px rgba(219,70,252,0.59), 9px 10px 10px 1px rgba(63,94,251,0.53), 19px 15px 34px 2px rgba(63,94,251,0.53);
+}
+
+.content_item h5{
+    margin: 5px 15px;
+}
+
+.link_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    width: 90%;
 }
 
 .img_item img{

@@ -207,5 +207,24 @@ CONTENT PAGE
     left: 250px;
     height: calc(100% - 80px);
     width: calc(100% - 250px);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url(img/scontro-controller.jpg) center center;
+    background-size: cover;
+}
+
+.content_page h1{
+    background-color: rgba(63, 94, 251, 0.596);
+    padding: 5px 40px;
+    border-radius: 20px;
+    color: red;
+}
+
+.content_page h4{
+    background-color: rgba(219,70,252,1);
+    padding: 5px 40px;
+    border-radius: 20px;
+    color: white;
 }
