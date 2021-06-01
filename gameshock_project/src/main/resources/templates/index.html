@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    	<head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.index})"></head>
+		<head th:insert="fragments/navbar.html :: navbar_css"> </head>
+		<head th:insert="fragments/footer.html :: footer_css"> </head>
+		<link th:href="@{/css/home_style.css}" rel="stylesheet">
+</head>
+<body>
+
+    <div class="img_subbackground"></div>
+    <div class="page">
+    	
+        <header th:replace="fragments/navbar.html :: navbar"></header>
+
+        <div class="showcase">
+            <div class="showcase_content_img">
+                <h1>GAMESHOCK</h1>
+                <h3>Passa dalla nostra parte per vincere</h3>
+            </div>
+        </div>
+
+
+        <video loop="true" autoplay="autoplay" muted>
+            <source src="../static/images/gamers.mp4" type="video/mp4">
+        </video>
+
+
+        <section class="videogame_choice">
+            <div class="img_videogame"></div>
+            <div class="text_videogame">
+                <h2>Videogame
+                </h2>
+                <p>Scegli quello giusto per te ed impegnati per diventare
+                    il più forte.
+                    <br>
+                    Abbiamo una vasta scelta di videogiochi per tutte le console </p>
+            </div>
+        </section>
+    </div>
+
+
+
+    <section class="trasparent_platform_img"></section>
+
+
+    <div class="page">
+        <section class="accessory_choice">
+            <div class="text_accessory">
+                <h2>Accessori</h2>
+                <p>Ogni singolo accessorio può fare la differenza in ogni partita.
+                    Scegli quello giusto e vedrai i risultati!
+                    <br>
+                    Abbiamo una vasta scelta di accessori per tutte le console </p>
+            </div>
+            <div class="img_accessory"></div>
+        </section>
+
+        <footer th:replace="fragments/footer.html :: footer"></footer>
+        
+    </div>
+
+    <script th:replace="fragments/base.html :: script"></script>
+
+
+</body>
+</html>

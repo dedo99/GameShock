@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:fragment="navbar_css">
+		<link th:href="@{/css/navbar_style.css}" rel="stylesheet">
+	</head>
+	
+	<body>
+		<header th:fragment="navbar">
+			<nav class="navbar">
+	            <div class="logo">
+	                <div class="img_shock"></div>
+	                <h2>GAMESHOCK</h2>
+	            </div>
+	            <div class="utility">
+	                <ul class="menu">
+	                    <li class="flip_menu"><a href="home.html">Home</a></li>
+	                    <li class="flip_menu"><a href="videogame.html">VideoGame</a></li>
+	                    <li class="flip_menu"><a href="accessori.html">Accessori</a></li>
+	                    <li class="flip_menu"><a href="informazioni.html">Informazioni</a></li>
+	                    <li class="flip_menu"><a href="login_amm.html">Accedi</a></li>
+	                </ul>
+	                <div class="hamburger"><i class="fas fa-bars fa-2x wt"></i></div>
+	            </div>
+        	</nav>
+		</header>
+	</body>
+</html>
