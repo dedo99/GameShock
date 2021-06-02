@@ -1,6 +1,7 @@
 package it.uniroma3.siw.spring.model;
 
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
 import lombok.Data;
@@ -38,4 +39,7 @@ public abstract class Item {
 	@NonNull
 	@Exclude
 	private Float usedPrice;
+	
+	@Lob
+	private String image;
 }

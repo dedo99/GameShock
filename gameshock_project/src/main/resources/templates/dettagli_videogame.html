@@ -1,38 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="dettagli_videogame_style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Videogame</title>
+    <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.dettagliVideogame})"></head>
+	<head th:insert="fragments/navbar.html :: navbar_css"> </head>
+	<head th:insert="fragments/footer.html :: footer_css"> </head>
+	<link th:href="@{/css/dettagli_videogame_style.css}" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <div class="img_shock"></div>
-            <h2>GAMESHOCK</h2>
-        </div>
-        <div class="utility">
-            <ul class="menu">
-                <li class="flip_menu"><a href="home.html">Home</a></li>
-                <li class="flip_menu"><a href="videogame.html">VideoGame</a></li>
-                <li class="flip_menu"><a href="accessori.html">Accessori</a></li>
-                <li class="flip_menu"><a href="informazioni.html">Informazioni</a></li>
-                <li class="flip_menu"><a href="login_amm.html">Accedi</a></li>
-            </ul>
-            <div class="hamburger"><i class="fas fa-bars fa-2x wt"></i></div>
-        </div>
-    </nav>
+    <header th:replace="fragments/navbar.html :: navbar"></header>
 
     <section class="showcase_videogame">
         <div class="img_videogame">
-            <img src="img/battlefield_deluxe_edition.jpg" alt="">
+            <img src="../static/images/battlefield_deluxe_edition.jpg" alt="">
         </div>
         <div class="info_videogame">
             <h1>Nome Videogame</h1>
@@ -78,7 +58,7 @@
         <div class="recommended_products">
             <div class="box_recommended_products">
                 <a href="dettagli_videogame.html">
-                    <img src="img/2med.jpg" alt="">
+                    <img src="../static/images/2med.jpg" alt="">
                     <h2>Nome Gioco</h2>
                     <h3 class="prezzo">50$</h3>
                 </a>
@@ -86,7 +66,7 @@
 
             <div class="box_recommended_products">
                 <a href="dettagli_videogame.html">
-                    <img src="img/2med.jpg" alt="">
+                    <img src="../static/images/2med.jpg" alt="">
                     <h2>Nome Gioco</h2>
                     <h3 class="prezzo">50$</h3>
                 </a>
@@ -94,7 +74,7 @@
 
             <div class="box_recommended_products">
                 <a href="dettagli_videogame.html">
-                    <img src="img/2med.jpg" alt="">
+                    <img src="../static/images/2med.jpg" alt="">
                     <h2>Nome Gioco</h2>
                     <h3 class="prezzo">50$</h3>
                 </a>
@@ -102,7 +82,7 @@
 
             <div class="box_recommended_products">
                 <a href="dettagli_videogame.html">
-                    <img src="img/2med.jpg" alt="">
+                    <img src="../static/images/2med.jpg" alt="">
                     <h2>Nome Gioco</h2>
                     <h3 class="prezzo">50$</h3>
                 </a>
@@ -111,34 +91,10 @@
 
     </section>
 
-    
 
-    <footer class="footer">
-        <div class="social_footer">
-            <a href="" class="link_social"><i class="fab fa-facebook-square fa-3x flip"></i></a>
-            <a href="" class="link_social"><i class="fab fa-twitter fa-3x flip"></i></a>
-            <a href="" class="link_social"><i class="fab fa-instagram fa-3x flip"></i></a>
-            <a href="" class="link_social"><i class="fab fa-telegram-plane fa-3x flip"></i></a>
-        </div>
-    </footer>
+    <footer th:replace="fragments/footer.html :: footer"></footer>
 
-
-    <script>
-        // JQUERY
-        $(document).ready(function(){
-            $( ".hamburger" ).click(function() {
-            $( ".menu" ).toggleClass( "menu--open" );
-            });
-     
-        });
-    
-        ScrollReveal().reveal('.reveal', { easing: 'cubic-bezier(.77,.34,.10,1.0)', distance: '150px' , duration: 2000, interval: 600 });
-    
-        ScrollReveal().reveal('.flip', { rotate: {x: 90, y:0, z: 90}, duration: 2000, mobile: true});
-    
-        ScrollReveal().reveal('.flip_menu', { rotate: {x: 0, y:0, z: 90}, duration: 2000, interval: 600, mobile: false});
-    
-    </script>
+    <script th:replace="fragments/base.html :: script"></script>
     
 </body>
 </html>

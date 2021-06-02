@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login_amm_style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Login</title>
+    <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.login})"></head>
+	<head th:insert="fragments/navbar.html :: navbar_css"> </head>
+	<head th:insert="fragments/footer.html :: footer_css"> </head>
+	<link th:href="@{/css/login_amm_style.css}" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <div class="img_shock"></div>
-            <h2>GAMESHOCK</h2>
-        </div>
-        <div class="utility">
-            <ul class="menu">
-                <li class="flip_menu"><a href="home.html">Home</a></li>
-                <li class="flip_menu"><a href="videogame.html">VideoGame</a></li>
-                <li class="flip_menu"><a href="accessori.html">Accessori</a></li>
-                <li class="flip_menu"><a href="informazioni.html">Informazioni</a></li>
-                <li class="flip_menu"><a href="login_amm.html">Accedi</a></li>
-            </ul>
-            <div class="hamburger"><i class="fas fa-bars fa-2x wt"></i></div>
-        </div>
-    </nav>
+    <header th:replace="fragments/navbar.html :: navbar"></header>
 
     <section class="page_content">
         <video loop="true" autoplay="autoplay" muted>
-            <source src="img/Lightning - 28067.mp4" type="video/mp4">
+            <source src="../static/images/Lightning - 28067.mp4" type="video/mp4">
             Il browswer non supporta il video
         </video>
         <div class="login_form">
@@ -48,22 +29,7 @@
     </section>
 
 
-    <script>
-        // JQUERY
-        $(document).ready(function(){
-            $( ".hamburger" ).click(function() {
-            $( ".menu" ).toggleClass( "menu--open" );
-            });
-     
-        });
-    
-        ScrollReveal().reveal('.reveal', { easing: 'cubic-bezier(.77,.34,.10,1.0)', distance: '150px' , duration: 2000, interval: 600 });
-    
-        ScrollReveal().reveal('.flip', { rotate: {x: 90, y:0, z: 90}, duration: 2000, mobile: true});
-    
-        ScrollReveal().reveal('.flip_menu', { rotate: {x: 0, y:0, z: 90}, duration: 2000, interval: 600, mobile: false});
-    
-    </script>
+    <script th:replace="fragments/base.html :: script"></script>
     
     
 </body>

@@ -14,16 +14,6 @@ public class GeneralController {
 		return "index.html";
 	}
 	
-	@RequestMapping(value = "/videogame", method = RequestMethod.GET)
-	public String visualizzaVideoGame() {
-		return "videogame.html";
-	}
-
-	@RequestMapping(value = "/accessori", method = RequestMethod.GET)
-	public String visualizzaAccessori() {
-		return "accessori.html";
-	}
-	
 	@RequestMapping(value = "/informazioni", method = RequestMethod.GET)
 	public String visualizzaInformazioni() {
 		return "informazioni.html";
@@ -32,6 +22,36 @@ public class GeneralController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String visualizzaLogin() {
 		return "login_amm.html";
+	}
+	
+	@RequestMapping(value = "/homeAmm", method = RequestMethod.GET)
+	public String visualizzHomeAmm() {
+		return "home_amm.html";
+	}
+	
+	@RequestMapping(value = "/insertVideogame", method = RequestMethod.GET)
+	public String visualizzaInserisciVideogameAmm() {
+		return "inserisci_videogame_amm.html";
+	}
+	
+	@RequestMapping(value = "/insertAccessorio", method = RequestMethod.GET)
+	public String visualizzaInserisciAccessorioAmm() {
+		return "inserisci_accessorio_amm.html";
+	}
+	
+	@RequestMapping(value = "/showDeleteVideogameAmm", method = RequestMethod.GET)
+	public String visualizzaVideogameAmm() {
+		return "vedi_videogame_amm.html";
+	}
+	
+	@RequestMapping(value = "/showDeleteAccessorioAmm", method = RequestMethod.GET)
+	public String visualizzaAccessoriAmm() {
+		return "vedi_accessorio_amm.html";
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String exitAccount() {
+		return "index.html";
 	}
 
 }
