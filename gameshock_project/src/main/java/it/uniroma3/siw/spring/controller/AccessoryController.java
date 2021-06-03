@@ -3,23 +3,26 @@ package it.uniroma3.siw.spring.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import it.uniroma3.siw.spring.model.Artista;
-import it.uniroma3.siw.spring.model.Category;
-import it.uniroma3.siw.spring.model.Collezione;
-import it.uniroma3.siw.spring.model.Platform;
+import it.uniroma3.siw.spring.controller.validator.AccessoryValidator;
+import it.uniroma3.siw.spring.model.Accessory;
 import it.uniroma3.siw.spring.service.AccessoryService;
 
 @Controller
-public class AccessorioController {
+public class AccessoryController {
 	
 	@Autowired
 	private AccessoryService accessoryService;
+	
+	@Autowired
+	private AccessoryValidator accessoryValidator;
 	
 	
 	@RequestMapping(value = "/accessori", method = RequestMethod.GET)
@@ -35,23 +38,31 @@ public class AccessorioController {
 		return "dettagli_accessorio.html";
 	}
 	
+	@RequestMapping(value = "/admin/showDeleteAccessorioAmm", method = RequestMethod.GET)
+	public String visualizzaAccessoriAmm() {
+		return "admin/vedi_accessorio_amm.html";
+	}
+	
+	
+	@RequestMapping(value = "/admin/insertAccessorio", method = RequestMethod.GET)
+	public String visualizzaInserisciAccessorioAmm(Model model) {
+		model.addAttribute("accessorio", new Accessory());
+		return "admin/inserisci_accessorio_amm.html";
+	}
+	
 	
 	@RequestMapping(value = "/admin/addAccessorio", method = RequestMethod.POST)
-    public String saveOpera(@RequestParam("file") MultipartFile file,
-    		@RequestParam("code") String code,
-    		@RequestParam("name") String name,
-    		@RequestParam("description") String description,
-    		@RequestParam("rating") Float rating,
-    		@RequestParam("newPrice") Float newPrice,
-    		@RequestParam("usedPrice") Float usedPrice,
-    		@RequestParam("color") String color,
-    		@RequestParam("category") Category category,
-    		@RequestParam("platform") Platform platform,
-    		@RequestParam("usedPrice") Float usedPrice,
-    		Model model)
+    public String saveAccessory(@RequestParam("file") MultipartFile file,
+    		@ModelAttribute("accessorio") Accessory accessorio,
+    		Model model,
+    		BindingResult bindingResult)
     {
-		this.accessoryService.saveOperaToDB(file, titolo, descrizione, anno, collezione, artista);
-    	return "inserisci_accessorio_amm.html";
+		this.accessoryValidator.validate(accessorio, bindingResult);
+		if(!bindingResult.hasErrors()) {
+			this.accessoryService.saveAccessoryToDB(file, accessorio);
+			model.addAttribute("accessorio", new Accessory());
+		}
+    	return "admin/inserisci_accessorio_amm.html";
     }
 
 

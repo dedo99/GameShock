@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.inserisciVideogameAmm})"></head>
+	<head th:insert="fragments/navbar_amm.html :: navbar_amm_css"> </head>
+	<head th:insert="fragments/navdrawer_amm.html :: navdrawer_amm_css"> </head>
+	<link th:href="@{/css/inserisci_videogame_amm_style.css}" rel="stylesheet">
+</head>
+<body>
+
+    <header th:replace="fragments/navbar_amm.html :: navbar_amm"></header>
+
+    <header th:replace="fragments/navdrawer_amm.html :: navdrawer_amm"></header>
+    
+
+    <section class="content_page">
+        <h3>Insert Videogame</h3>
+        <form th:action="@{/admin/addVideogame}" method="post" th:object="${videogame}" enctype="multipart/form-data">
+        	<div th:if="${#fields.hasGlobalErrors()}">
+            	<p th:each="err : ${#fields.globalErrors()}" th:text="${err}" th:style="'color:red'" >...</p>
+			</div>
+            <h6>Code:</h6>
+            <input type="text" placeholder="123456" th:field="*{code}">
+            <h6 th:if="${#fields.hasErrors('code')}" th:errors="*{code}" th:style="'color:red'"> </h6>
+            <h6>Name:</h6>
+            <input type="text" placeholder="Minecraft" th:field="*{name}">
+            <h6 th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:style="'color:red'"> </h6>
+            <h6>Description:</h6>
+            <textarea type="text" placeholder="Good" th:field="*{description}"></textarea>
+            <h6>Rating:</h6>
+            <input type="text" placeholder="5" th:field="*{rating}">
+            <h6 th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}" th:style="'color:red'"> </h6>
+            <h6>New Price:</h6>
+            <input type="text" placeholder="50$" th:field="*{newPrice}">
+            <h6 th:if="${#fields.hasErrors('newPrice')}" th:errors="*{newPrice}" th:style="'color:red'"> </h6>
+            <h6>Used Price:</h6>
+            <input type="text" placeholder="10$" th:field="*{usedPrice}">
+            <h6 th:if="${#fields.hasErrors('usedPrice')}" th:errors="*{usedPrice}" th:style="'color:red'"> </h6>
+            <h6>Data Release:</h6>
+            <input type="text" placeholder="Minecraft" th:field="*{dateRelease}">
+            <h6 th:if="${#fields.hasErrors('dateRelease')}" th:errors="*{dateRelease}" th:style="'color:red'"> </h6>
+            <h6>Genre:</h6>
+            <input type="text" placeholder="Minecraft" th:field="*{genre}">
+            <h6 th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}" th:style="'color:red'"> </h6>
+            <h6>Pegi:</h6>
+            <input type="text" placeholder="Minecraft" th:field="*{pegi}">
+            <h6 th:if="${#fields.hasErrors('pegi')}" th:errors="*{pegi}" th:style="'color:red'"> </h6>
+            <h6>Publisher:</h6>
+            <input type="text" placeholder="Minecraft" th:field="*{publisher}">
+            <h6 th:if="${#fields.hasErrors('publisher')}" th:errors="*{publisher}" th:style="'color:red'"> </h6>
+            <h6>Platform:</h6>
+            <input type="text" placeholder="PlayStation" th:field="*{platforms.name}">
+            <h6 th:if="${#fields.hasErrors('platforms')}" th:errors="*{platforms}" th:style="'color:red'"> </h6>
+            <h6>Image:</h6>
+            <input type="file" placeholder="Minecraft">
+            <br>
+            <input type="submit" name="Insert" value="Insert">
+        </form>
+    </section>
+    
+</body>
+</html>

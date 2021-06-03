@@ -1,15 +1,15 @@
 package it.uniroma3.siw.spring.model;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.EqualsAndHashCode.Exclude;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.experimental.SuperBuilder;
 
@@ -17,6 +17,7 @@ import lombok.experimental.SuperBuilder;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
+@NoArgsConstructor
 public class Videogame extends Item {
 
 	@Column(nullable=false)
@@ -36,10 +37,7 @@ public class Videogame extends Item {
 	private String publisher;
 	
 	@Exclude
-	@ManyToMany(mappedBy="videogames")
-	private List<Platform> platforms;
+	@ManyToOne
+	private Platform platforms;
 
-	@Exclude
-	@ManyToMany(mappedBy="videogames")
-	private List<Amministrator> amministrators;
 }

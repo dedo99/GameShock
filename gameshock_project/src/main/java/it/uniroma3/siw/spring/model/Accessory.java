@@ -1,15 +1,12 @@
 package it.uniroma3.siw.spring.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.EqualsAndHashCode.Exclude;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.experimental.SuperBuilder;
 
 @Entity
@@ -19,19 +16,13 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 public class Accessory extends Item {
 
-	@NonNull
 	@Exclude
 	private String color;
 
-	@NonNull
 	@Exclude
 	private Category category;
 
-	@Exclude
-	@ManyToMany(mappedBy="accessories")
-	private List<Platform> platforms;
+	@ManyToOne
+	private Platform platforms;
 
-	@Exclude
-	@ManyToMany(mappedBy="accessories")
-	private List<Amministrator> amministrators;
 }
