@@ -38,9 +38,9 @@ public class Platform {
 	@ManyToOne
 	private Society society;
 	
-	@OneToMany(mappedBy = "platforms")
+	@OneToMany(mappedBy = "platform")
 	private List<Videogame> videogames;
 	
-	@OneToMany(mappedBy = "platforms")
+	@OneToMany(mappedBy = "platform")
 	private List<Accessory> accessories;
 }

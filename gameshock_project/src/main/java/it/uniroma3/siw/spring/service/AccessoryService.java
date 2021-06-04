@@ -42,6 +42,21 @@ public class AccessoryService {
 		return (List<Accessory>) this.accessoryrepository.findAll();
 	}
 	
+	@Transactional
+	public void deleteAccessory(String code) {
+		this.accessoryrepository.delete(this.getSingleAccessory(code));
+	}
+	
+	@Transactional
+	public List<Accessory> searchAccessories(String paramSearch) {
+		if(paramSearch.equals("")) {
+			return this.getAllAccessories();
+		}
+		else {
+			return this.accessoryrepository.findByNameOrCode(paramSearch, paramSearch);
+		}
+	}
+	
 	
 	@Transactional
 	public boolean alreadyExistsAccessory(Accessory accessory) {

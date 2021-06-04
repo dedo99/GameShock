@@ -30,12 +30,12 @@ public class AccessoryValidator implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "usedPrice", "required");
 		ValidationUtils.rejectIfEmpty(errors, "color", "required");
 		ValidationUtils.rejectIfEmpty(errors, "category", "required");
-		ValidationUtils.rejectIfEmpty(errors, "platforms", "required");
+		ValidationUtils.rejectIfEmpty(errors, "platform", "required");
 		
 		
 		if(!errors.hasErrors()) {
 			if(this.accessoryService.alreadyExistsAccessory(accessory)) {
-				errors.reject("accessoryDuplicato");
+				errors.reject("accessorioDuplicato");
 			}
 		}
 		

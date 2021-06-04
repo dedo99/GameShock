@@ -1,6 +1,8 @@
 package it.uniroma3.siw.spring.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 
 import lombok.Data;
@@ -20,9 +22,10 @@ public class Accessory extends Item {
 	private String color;
 
 	@Exclude
+	@Enumerated(EnumType.STRING)
 	private Category category;
 
 	@ManyToOne
-	private Platform platforms;
+	private Platform platform;
 
 }

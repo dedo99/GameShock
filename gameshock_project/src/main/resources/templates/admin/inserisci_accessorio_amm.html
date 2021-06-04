@@ -42,8 +42,8 @@
             <input type="text" placeholder="War" th:field="*{category}">
             <h6 th:if="${#fields.hasErrors('category')}" th:errors="*{category}" th:style="'color:red'"> </h6>
             <h6>Platform:</h6>
-            <input type="text" placeholder="PlayStation" th:field="*{platforms.name}">
-            <h6 th:if="${#fields.hasErrors('platforms')}" th:errors="*{platforms}" th:style="'color:red'"> </h6>
+            <input type="text" placeholder="PlayStation" th:field="*{platform.name}">
+            <h6 th:if="${#fields.hasErrors('platform')}" th:errors="*{platform}" th:style="'color:red'"> </h6>
             <h6>Image:</h6>
             <input type="file" placeholder="Image" name="file">
             <br>

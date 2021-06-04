@@ -32,7 +32,7 @@ public class VideogameValidator implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "genre", "required");
 		ValidationUtils.rejectIfEmpty(errors, "pegi", "required");
 		ValidationUtils.rejectIfEmpty(errors, "publisher", "required");
-		ValidationUtils.rejectIfEmpty(errors, "platforms", "required");
+		ValidationUtils.rejectIfEmpty(errors, "platform", "required");
 		
 		
 		if(!errors.hasErrors()) {

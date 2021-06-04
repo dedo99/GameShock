@@ -39,15 +39,30 @@ public class AccessoryController {
 	}
 	
 	@RequestMapping(value = "/admin/showDeleteAccessorioAmm", method = RequestMethod.GET)
-	public String visualizzaAccessoriAmm() {
-		return "admin/vedi_accessorio_amm.html";
+	public String visualizzaAccessoriAmm(Model model) {
+		model.addAttribute("accessori", this.accessoryService.getAllAccessories());
+		return "admin/vedi_accessorio_amm";
+	}
+	
+	
+	@RequestMapping(value = "/admin/ricercaAccessorio", method = RequestMethod.POST)
+	public String cercaVideogameAmm(@RequestParam("param") String paramSearch, Model model) {
+		model.addAttribute("accessori", this.accessoryService.searchAccessories(paramSearch));
+		return "admin/vedi_accessorio_amm";
+	}
+	
+	
+	@RequestMapping(value = "/admin/deleteAccessorioAmm/{code}", method = RequestMethod.GET)
+	public String cancellaAccessorioAmm(@PathVariable("code") String code, Model model) {
+		this.accessoryService.deleteAccessory(code);
+		return "admin/vedi_accessorio_amm";
 	}
 	
 	
 	@RequestMapping(value = "/admin/insertAccessorio", method = RequestMethod.GET)
 	public String visualizzaInserisciAccessorioAmm(Model model) {
 		model.addAttribute("accessorio", new Accessory());
-		return "admin/inserisci_accessorio_amm.html";
+		return "admin/inserisci_accessorio_amm";
 	}
 	
 	
@@ -62,7 +77,7 @@ public class AccessoryController {
 			this.accessoryService.saveAccessoryToDB(file, accessorio);
 			model.addAttribute("accessorio", new Accessory());
 		}
-    	return "admin/inserisci_accessorio_amm.html";
+    	return "admin/inserisci_accessorio_amm";
     }
 
 

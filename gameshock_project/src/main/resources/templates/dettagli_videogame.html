@@ -12,29 +12,29 @@
 
     <section class="showcase_videogame">
         <div class="img_videogame">
-            <img src="../static/images/battlefield_deluxe_edition.jpg" alt="">
+            <img th:src="*{'data:image/jpeg;base64,'+ {videogame.image}}" alt="">
         </div>
         <div class="info_videogame">
             <h1>Nome Videogame</h1>
-            <h3>Codice: codice1</h3>
-            <h3>Genere: genere1</h3>
-            <h3><span class="new_price">Prezzo nuovo: 100$</span></h3>
-            <h3><span class="old_price">Prezzo usato: 50$</span></h3>
+            <h3><span>Codice:</span><span th:text="${videogame.code}">codice1</span> </h3>
+            <h3><span>Genere:</span><span th:text="${videogame.genre}">genere1</span> </h3>
+            <h3><span class="new_price">Prezzo nuovo: </span><span class="new_price" th:text="${videogame.newPrice}">100$</span></h3>
+            <h3><span class="old_price">Prezzo usato: </span><span class="old_price" th:text="${videogame.usedPrice}">50$</span></h3>
         </div>
     </section>
 
     <section class="more_info">
         <div class="content_specific">
             <h2>Pegi:</h2>
-            <p> 5</p>
+            <p th:text="${videogame.pegi}"> 5</p>
         </div>
         <div class="content_specific">
             <h2>Publisher:</h2>
-            <p> Ubisoft</p>
+            <p th:text="${videogame.publisher}"> Ubisoft</p>
         </div>
         <div class="content_specific">
             <h2>Descrizione:</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+            <p th:text="${videogame.description}">Lorem ipsum dolor sit amet consectetur adipisicing 
                 elit. Ad quas quasi, sed ducimus qui, dolorem totam,
                 possimus atque vero hic accusantium assumenda non 
                 fugiat perspiciatis ipsum distinctio est ea dolore.
@@ -42,11 +42,11 @@
         </div>
         <div class="content_specific">
             <h2>Voto:</h2>
-            <p>5</p>
+            <p th:text="${videogame.rating}">5</p>
         </div>
         <div class="content_specific">
             <h2>Data di rilascio:</h2>
-            <p>15/10/2020</p>
+            <p th:text="${videogame.dateRelease}">15/10/2020</p>
         </div>
 
     </section>
@@ -56,38 +56,13 @@
         <h1>VideoGame consigliati</h1>
 
         <div class="recommended_products">
-            <div class="box_recommended_products">
+            <div class="box_recommended_products" th:each="videogameRec : ${videogamesRec}">
                 <a href="dettagli_videogame.html">
-                    <img src="../static/images/2med.jpg" alt="">
-                    <h2>Nome Gioco</h2>
-                    <h3 class="prezzo">50$</h3>
+                    <img th:src="*{'data:image/jpeg;base64,'+ {videogame.image}}" alt="">
+                    <h2 th:text="${videogameRec.name}">Nome Gioco</h2>
+                    <h3 class="prezzo" th:text="${videogameRec.newPrice}">50$</h3>
                 </a>
             </div>
-
-            <div class="box_recommended_products">
-                <a href="dettagli_videogame.html">
-                    <img src="../static/images/2med.jpg" alt="">
-                    <h2>Nome Gioco</h2>
-                    <h3 class="prezzo">50$</h3>
-                </a>
-            </div>
-
-            <div class="box_recommended_products">
-                <a href="dettagli_videogame.html">
-                    <img src="../static/images/2med.jpg" alt="">
-                    <h2>Nome Gioco</h2>
-                    <h3 class="prezzo">50$</h3>
-                </a>
-            </div>
-
-            <div class="box_recommended_products">
-                <a href="dettagli_videogame.html">
-                    <img src="../static/images/2med.jpg" alt="">
-                    <h2>Nome Gioco</h2>
-                    <h3 class="prezzo">50$</h3>
-                </a>
-            </div>
-        </div>
 
     </section>
 

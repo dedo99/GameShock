@@ -49,10 +49,10 @@
             <input type="text" placeholder="Minecraft" th:field="*{publisher}">
             <h6 th:if="${#fields.hasErrors('publisher')}" th:errors="*{publisher}" th:style="'color:red'"> </h6>
             <h6>Platform:</h6>
-            <input type="text" placeholder="PlayStation" th:field="*{platforms.name}">
-            <h6 th:if="${#fields.hasErrors('platforms')}" th:errors="*{platforms}" th:style="'color:red'"> </h6>
+            <input type="text" placeholder="PlayStation" th:field="*{platform.name}">
+            <h6 th:if="${#fields.hasErrors('platform')}" th:errors="*{platform}" th:style="'color:red'"> </h6>
             <h6>Image:</h6>
-            <input type="file" placeholder="Minecraft">
+            <input type="file" placeholder="Image" name="file">
             <br>
             <input type="submit" name="Insert" value="Insert">
         </form>
