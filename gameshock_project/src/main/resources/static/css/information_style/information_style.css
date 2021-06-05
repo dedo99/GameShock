@@ -1,9 +1,9 @@
 /* --------
-TABLE 
+BACKGROUND
 -------------*/
 
 .background_page{
-    background: url(../images/information_images/controller_neon.jpg);
+    background: url(../../images/information_images/controller_neon.jpg);
     background-size: cover;
     padding-bottom: 40px;
 }
@@ -22,8 +22,6 @@ table {
     background-color: #fff;
     border-radius: 10px;
 }
-
-
 
 #dove_siamo {
 	text-align: center;

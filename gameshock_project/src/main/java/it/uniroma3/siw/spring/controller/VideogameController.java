@@ -28,6 +28,10 @@ public class VideogameController {
 	@Autowired
 	private VideogameValidator videogameValidator;
 	
+	/************
+	 *** HOME ***
+	 ************/
+	
 	
 	@RequestMapping(value = "/videogame", method = RequestMethod.GET)
 	public String visualizzaVideoGame(Model model) {
@@ -44,6 +48,10 @@ public class VideogameController {
 		model.addAttribute("videogamesRec", this.videogameService.getAllVideogamesWithGenre(v.getGenre()));
 		return "dettagli_videogame.html";
 	}
+	
+	/*************
+	 *** ADMIN ***
+	 *************/
 	
 	@RequestMapping(value = "/admin/insertVideogame", method = RequestMethod.GET)
 	public String visualizzaInserisciVideogameAmm(Model model) {

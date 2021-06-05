@@ -8,15 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import it.uniroma3.siw.spring.model.Amministratore;
-import it.uniroma3.siw.spring.model.Credenziali;
-import it.uniroma3.siw.spring.service.CredenzialiService;
+import it.uniroma3.siw.spring.model.Amministrator;
+import it.uniroma3.siw.spring.model.Credentials;
+import it.uniroma3.siw.spring.service.CredentialsService;
 
 @Controller
 public class AuthenticationController {
 	
 	@Autowired
-	private CredenzialiService credenzialiService;
+	private CredentialsService credenzialiService;
 	
 	@RequestMapping(value = "/admin/homeAmm", method = RequestMethod.GET)
 	public String visualizzaHomeAmm() {
@@ -37,8 +37,8 @@ public class AuthenticationController {
     public String defaultAfterLogin(Model model) {
         
     	UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    	Credenziali credentials = credenzialiService.getCredentials(userDetails.getUsername());
-    	if (credentials.getRole().equals(Credenziali.ADMIN_ROLE)) {
+    	Credentials credentials = credenzialiService.getCredentials(userDetails.getUsername());
+    	if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
             return "admin/home_amm";
         }
     	return "index";
@@ -47,8 +47,8 @@ public class AuthenticationController {
     @RequestMapping(value = { "/register" }, method = RequestMethod.GET)
     public String registerUser() {
 
-        Credenziali c = Credenziali.builder().username("pippo").password("pluto").role(Credenziali.ADMIN_ROLE).build();
-        Amministratore a = Amministratore.builder().nome("Mario").cognome("Rossi").build();
+        Credentials c = Credentials.builder().username("pippo").password("pluto").role(Credentials.ADMIN_ROLE).build();
+        Amministrator a = Amministrator.builder().name("Mario").surname("Rossi").build();
         c.setAdmin(a);
         credenzialiService.saveCredentials(c);
         return "login_amm";

@@ -10,14 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import it.uniroma3.siw.spring.model.Amministratore;
-import it.uniroma3.siw.spring.repository.AmministratoreRepository;
+import it.uniroma3.siw.spring.model.Amministrator;
+import it.uniroma3.siw.spring.repository.AmministratorRepository;
 
 @Service
-public class AmministratoreService {
+public class AmministratorService {
 	
 	 @Autowired
-	 protected AmministratoreRepository amministratoreRepository;
+	 protected AmministratorRepository amministratoreRepository;
 
     /**
      * This method retrieves a User from the DB based on its ID.
@@ -25,8 +25,8 @@ public class AmministratoreService {
      * @return the retrieved User, or null if no User with the passed ID could be found in the DB
      */
     @Transactional
-    public Amministratore getUser(Long id) {
-        Optional<Amministratore> result = this.amministratoreRepository.findById(id);
+    public Amministrator getUser(Long id) {
+        Optional<Amministrator> result = this.amministratoreRepository.findById(id);
         return result.orElse(null);
     }
 
@@ -38,7 +38,7 @@ public class AmministratoreService {
      *                              as the passed User already exists in the DB
      */
     @Transactional
-    public Amministratore saveUser(Amministratore user) {
+    public Amministrator saveUser(Amministrator user) {
         return this.amministratoreRepository.save(user);
     }
 
@@ -47,10 +47,10 @@ public class AmministratoreService {
      * @return a List with all the retrieved Users
      */
     @Transactional
-    public List<Amministratore> getAllAdmin() {
-        List<Amministratore> result = new ArrayList<>();
-        Iterable<Amministratore> iterable = this.amministratoreRepository.findAll();
-        for(Amministratore admin : iterable)
+    public List<Amministrator> getAllAdmin() {
+        List<Amministrator> result = new ArrayList<>();
+        Iterable<Amministrator> iterable = this.amministratoreRepository.findAll();
+        for(Amministrator admin : iterable)
             result.add(admin);
         return result;
     }

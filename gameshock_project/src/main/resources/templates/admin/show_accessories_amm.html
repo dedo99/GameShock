@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.vediAccessorioAmm})"></head>
+		<head th:insert="fragments/navbar_amm.html :: navbar_amm_css"> </head>
+		<head th:insert="fragments/navdrawer_amm.html :: navdrawer_amm_css"> </head>
+		<link th:href="@{/css/admin_style/show_accessories_amm_style.css}" rel="stylesheet">
+	</head>
+	<body>
+	
+	    <header th:replace="fragments/navbar_amm.html :: navbar_amm"></header>
+	
+	    <header th:replace="fragments/navdrawer_amm.html :: navdrawer_amm"></header>
+	    
+	    
+	    <section class="content_page">
+	        <div class="title_and_search">
+	            <h1>Accessory</h1>
+	            <!--<form th:action="@{/admin/ricercaAccessorio}" method="POST">
+	                <input type="text" name="param" placeholder="search accessory">
+	                <input type="submit" value="Search">
+	            </form> -->
+	        </div>
+	
+	
+	        <div class="content_item" th:each="accessory : ${accessories}">
+	            <a href="dettagli_accessorio.html" class="link_item">
+	                <div class="img_item">
+	                    <img th:src="*{'data:image/jpeg;base64,'+{accessorio.image}}" alt="">
+	                </div>
+	                <h6><span>Name: </span><span th:text="${accessory.name}">nomeprova</span></h6>
+	                <h6><span>Code: </span><span th:text="${accessory.code}">codiceprova</span></h6>
+	                <h6><span>Platform: </span><span th:text="${accessory.platform.name}">nomepiattaforma</span></h6>					
+	            </a>
+	            <a class="cestino" th:href="@{'/admin/deleteAccessoryAmm/' + ${accessory.code}}"><img th:src="@{/images/icona_cestino.png}" alt=""></a>
+	        </div>
+	        
+	        
+	    </section>
+	
+	
+	</body>
+</html>

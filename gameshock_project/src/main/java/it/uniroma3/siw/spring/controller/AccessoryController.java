@@ -24,61 +24,61 @@ public class AccessoryController {
 	@Autowired
 	private AccessoryValidator accessoryValidator;
 	
+	/************
+	 *** HOME ***
+	 ************/
 	
-	@RequestMapping(value = "/accessori", method = RequestMethod.GET)
-	public String visualizzaAccessori(Model model) {
-		model.addAttribute("accessori", this.accessoryService.getAllAccessories());
-		return "accessori.html";
+	@RequestMapping(value = "/accessories", method = RequestMethod.GET)
+	public String showAccessories(Model model) {
+		model.addAttribute("accessories", this.accessoryService.getAllAccessories());
+		return "accessories";
 	}
 	
-	
-	@RequestMapping(value = "/dettaglioAccessorio/{code}", method = RequestMethod.GET)
-	public String visualizzaDettagliAccessorio(@PathVariable("code") String code, Model model) {
-		model.addAttribute("accessorio", this.accessoryService.getSingleAccessory(code));
-		return "dettagli_accessorio.html";
+	@RequestMapping(value = "/detailsAccessory/{code}", method = RequestMethod.GET)
+	public String showDetailsAccessory(@PathVariable("code") String code, Model model) {
+		model.addAttribute("accessory", this.accessoryService.getSingleAccessory(code));
+		return "details_accessory";
 	}
 	
-	@RequestMapping(value = "/admin/showDeleteAccessorioAmm", method = RequestMethod.GET)
-	public String visualizzaAccessoriAmm(Model model) {
-		model.addAttribute("accessori", this.accessoryService.getAllAccessories());
-		return "admin/vedi_accessorio_amm";
+	/*************
+	 *** ADMIN ***
+	 *************/
+	
+	@RequestMapping(value = "/admin/insertAccessory", method = RequestMethod.GET)
+	public String showInsertAccessoryAmm(Model model) {
+		model.addAttribute("accessory", new Accessory());
+		return "admin/insert_accessory_amm";
 	}
 	
-	
-	@RequestMapping(value = "/admin/ricercaAccessorio", method = RequestMethod.POST)
-	public String cercaVideogameAmm(@RequestParam("param") String paramSearch, Model model) {
-		model.addAttribute("accessori", this.accessoryService.searchAccessories(paramSearch));
-		return "admin/vedi_accessorio_amm";
-	}
-	
-	
-	@RequestMapping(value = "/admin/deleteAccessorioAmm/{code}", method = RequestMethod.GET)
-	public String cancellaAccessorioAmm(@PathVariable("code") String code, Model model) {
-		this.accessoryService.deleteAccessory(code);
-		return "admin/vedi_accessorio_amm";
-	}
-	
-	
-	@RequestMapping(value = "/admin/insertAccessorio", method = RequestMethod.GET)
-	public String visualizzaInserisciAccessorioAmm(Model model) {
-		model.addAttribute("accessorio", new Accessory());
-		return "admin/inserisci_accessorio_amm";
-	}
-	
-	
-	@RequestMapping(value = "/admin/addAccessorio", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin/addAccessory", method = RequestMethod.POST)
     public String saveAccessory(@RequestParam("file") MultipartFile file,
-    		@ModelAttribute("accessorio") Accessory accessorio,
+    		@ModelAttribute("accessory") Accessory accessory,
     		Model model,
     		BindingResult bindingResult)
     {
-		this.accessoryValidator.validate(accessorio, bindingResult);
+		this.accessoryValidator.validate(accessory, bindingResult);
 		if(!bindingResult.hasErrors()) {
-			this.accessoryService.saveAccessoryToDB(file, accessorio);
-			model.addAttribute("accessorio", new Accessory());
+			this.accessoryService.saveAccessoryToDB(file, accessory);
+			model.addAttribute("accessory", new Accessory());
 		}
-    	return "admin/inserisci_accessorio_amm";
+    	return "admin/insert_accessory_amm";
     }
-
-
+	
+	@RequestMapping(value = "/admin/showDeleteAccessorioAmm", method = RequestMethod.GET)
+	public String showAccessoriesAmm(Model model) {
+		model.addAttribute("accessories", this.accessoryService.getAllAccessories());
+		return "admin/show_accessories_amm";
+	}
+	
+	@RequestMapping(value = "/admin/deleteAccessoryAmm/{code}", method = RequestMethod.GET)
+	public String deleteAccessoryAmm(@PathVariable("code") String code, Model model) {
+		this.accessoryService.deleteAccessory(code);
+		return "admin/show_accessories_amm";
+	}
+	
+//	@RequestMapping(value = "/admin/ricercaAccessorio", method = RequestMethod.POST)
+//	public String cercaVideogameAmm(@RequestParam("param") String paramSearch, Model model) {
+//		model.addAttribute("accessori", this.accessoryService.searchAccessories(paramSearch));
+//		return "admin/vedi_accessorio_amm";
+//	}
 }

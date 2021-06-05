@@ -21,7 +21,7 @@ public class Videogame extends Item {
 
 	@Column(nullable=false)
 	@Exclude
-	private String dateRelease;
+	private String releaseDate;
 
 	@Exclude
 	@Enumerated(EnumType.STRING)
