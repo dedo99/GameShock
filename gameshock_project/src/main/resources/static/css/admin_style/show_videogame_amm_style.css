@@ -3,11 +3,11 @@ CONTENT PAGE
 -------------- */
 
 .content_page{
-    position: fixed;
+    position: absolute;
     top: 80px;
-    left: 250px;
+    left: 260px;
+    /* height: calc(100% - 80px); */
     width: calc(100% - 250px);
-    min-height: calc(100vh -80px);
     text-align: center;
     padding: 50px;
     background: url(../images/scontro-controller.jpg) center center;
@@ -92,10 +92,6 @@ CONTENT PAGE
 
 .title_and_search input[type=submit]:hover{
     border: 3px solid orange;
-}
-
-.cestino img{
-	margin-left: 20px;
 }
 
 .cestino:hover{

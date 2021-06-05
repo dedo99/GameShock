@@ -4,7 +4,7 @@
     	<head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.index})"></head>
 		<head th:insert="fragments/navbar.html :: navbar_css"> </head>
 		<head th:insert="fragments/footer.html :: footer_css"> </head>
-		<link th:href="@{/css/index_style.css}" rel="stylesheet">
+		<link th:href="@{/css/home_style/index_style.css}" rel="stylesheet">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
 
 
         <video loop="true" autoplay="autoplay" muted>
-            <source th:src="@{/images/gamers.mp4}" type="video/mp4" />
+            <source th:src="@{/images/home_images/gamers.mp4}" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
 

@@ -1,6 +1,6 @@
 package it.uniroma3.siw.authentication;
 
-import static it.uniroma3.siw.model.Credenziali.ADMIN_ROLE;
+import static it.uniroma3.siw.spring.model.Credenziali.ADMIN_ROLE;
 
 import javax.sql.DataSource;
 
@@ -41,9 +41,8 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 // authorization paragraph: qui definiamo chi può accedere a cosa
                 .authorizeRequests()
                 // chiunque (autenticato o no) può accedere alle pagine index, login, register, ai css e alle immagini
-                .antMatchers(HttpMethod.GET, "/", "/index", "/informazioni", "/artisti", "/login",
-                		"/register", "/artista/**", "/opera/**", "/collezioni", 
-                		"/collezione/**", "/css/**", "/images/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/", "/index", "/informazioni", "/videogame", "/dettaglioVideogame/**",
+                		"/login", "/register", "/accessori", "dettaglioAccessori", "/css/**", "/images/**").permitAll()
                 // chiunque (autenticato o no) può mandare richieste POST al punto di accesso per login e register 
                 .antMatchers(HttpMethod.POST, "/login","/register").permitAll()
                 // solo gli utenti autenticati con ruolo ADMIN possono accedere a risorse con path /admin/**

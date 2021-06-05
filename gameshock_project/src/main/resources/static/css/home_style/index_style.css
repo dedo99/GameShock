@@ -5,7 +5,7 @@ IMG SUBBACKGROUND
 .img_subbackground{
     height: 100%;
     width: 100%;
-    background: url(../images/images-console.png);
+    background: url(../../images/home_images/console_images.png);
     z-index: -1;
     position: fixed;
     top: 0;
@@ -33,7 +33,7 @@ SECTION -- SHOWCASE
     margin: 0px;
     height: 100%;
     width: 100%;
-    background: url(../images/diventare-un-bravo-gamer.jpg);
+    background: url(../../images/home_images/gamer.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
@@ -82,7 +82,7 @@ SECTION -- CHOICE
 
 .img_videogame{
     /* border: 2px solid green; */
-    background: url(../images/Anime-gruppo.jpg);
+    background: url(../../images/home_images/anime.jpg);
     background-size: cover;
     border-radius: 20px;
     height: 500px;
@@ -107,7 +107,7 @@ SECTION -- CHOICE
 
 .img_accessory{
     /* border: 2px solid green; */
-    background: url(../images/accessori-gaming.jpg);
+    background: url(../../images/home_images/accessori_gaming.jpg);
     background-size: cover;
     border-radius: 20px;
     height: 500px;

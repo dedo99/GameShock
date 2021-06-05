@@ -16,12 +16,12 @@
 	            Il browswer non supporta il video
 	        </video>
 	        <div class="login_form">
-	            <form action="" method="post">
+	            <form th:action="@{/login}" method="post">
 	                <h3>Login</h3>
 	                <h6 id="text_email">Username</h6>
-	                <input type="text" placeholder="username">
+	                <input type="text" name="username" placeholder="username">
 	                <h6 id="text_pwd">Password</h6>
-	                <input type="password" placeholder="password">
+	                <input type="password" name="password" placeholder="password">
 	                <br>
 	                <input type="submit" value="Sign in">
 	            </form>
