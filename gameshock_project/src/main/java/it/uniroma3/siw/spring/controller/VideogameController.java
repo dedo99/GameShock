@@ -32,21 +32,19 @@ public class VideogameController {
 	 *** HOME ***
 	 ************/
 	
-	
-	@RequestMapping(value = "/videogame", method = RequestMethod.GET)
-	public String visualizzaVideoGame(Model model) {
+	@RequestMapping(value = "/videogames", method = RequestMethod.GET)
+	public String showVideoGame(Model model) {
 		model.addAttribute("videogames", this.videogameService.getAllVideogames());
-		return "videogame.html";
+		return "videogames";
 	}
 	
-	
-	@RequestMapping(value = "/dettaglioVideogame/{code}", method = RequestMethod.GET)
-	public String visualizzaDettagliVideogame(@PathVariable("code") String code, Model model) {
+	@RequestMapping(value = "/detailsVideogame/{code}", method = RequestMethod.GET)
+	public String showDetailsVideogame(@PathVariable("code") String code, Model model) {
 		Videogame v = this.videogameService.getSingleVideogame(code);
 		model.addAttribute("videogame", v);
 		logger.debug(v.getGenre().name());
 		model.addAttribute("videogamesRec", this.videogameService.getAllVideogamesWithGenre(v.getGenre()));
-		return "dettagli_videogame.html";
+		return "details_videogame.html";
 	}
 	
 	/*************
@@ -54,27 +52,9 @@ public class VideogameController {
 	 *************/
 	
 	@RequestMapping(value = "/admin/insertVideogame", method = RequestMethod.GET)
-	public String visualizzaInserisciVideogameAmm(Model model) {
+	public String showInsertVideogameAmm(Model model) {
 		model.addAttribute("videogame", new Videogame());
-		return "admin/inserisci_videogame_amm";
-	}
-	
-	@RequestMapping(value = "/admin/showDeleteVideogameAmm", method = RequestMethod.GET)
-	public String visualizzaVideogameAmm(Model model) {
-		model.addAttribute("videogames", this.videogameService.getAllVideogames());
-		return "admin/vedi_videogame_amm";
-	}
-	
-	@RequestMapping(value = "/admin/ricercaVideogame", method = RequestMethod.POST)
-	public String cercaVideogameAmm(@RequestParam("param") String paramSearch, Model model) {
-		model.addAttribute("videogames", this.videogameService.searchVideogames(paramSearch));
-		return "admin/vedi_videogame_amm";
-	}
-	
-	@RequestMapping(value = "/admin/deleteVideogameAmm/{code}", method = RequestMethod.GET)
-	public String cancellaVideogameAmm(@PathVariable("code") String code, Model model) {
-		this.videogameService.deleteVideogame(code);
-		return "admin/vedi_videogame_amm";
+		return "admin/insert_videogame_amm";
 	}
 	
 	@RequestMapping(value = "/admin/addVideogame", method = RequestMethod.POST)
@@ -88,7 +68,24 @@ public class VideogameController {
 			this.videogameService.saveVideogameToDB(file, videogame);
 			model.addAttribute("videogame", new Videogame());
 		}
-    	return "admin/inserisci_videogame_amm";
+    	return "admin/insert_videogame_amm";
     }
 	
+	@RequestMapping(value = "/admin/deleteVideogameAmm/{code}", method = RequestMethod.GET)
+	public String deleteVideogameAmm(@PathVariable("code") String code, Model model) {
+		this.videogameService.deleteVideogame(code);
+		return "admin/show_videogames_amm";
+	}
+	
+	@RequestMapping(value = "/admin/showDeleteVideogamesAmm", method = RequestMethod.GET)
+	public String showVideogameAmm(Model model) {
+		model.addAttribute("videogames", this.videogameService.getAllVideogames());
+		return "admin/show_videogames_amm";
+	}
+	
+//	@RequestMapping(value = "/admin/ricercaVideogame", method = RequestMethod.POST)
+//	public String cercaVideogameAmm(@RequestParam("param") String paramSearch, Model model) {
+//		model.addAttribute("videogames", this.videogameService.searchVideogames(paramSearch));
+//		return "admin/vedi_videogame_amm";
+//	}
 }

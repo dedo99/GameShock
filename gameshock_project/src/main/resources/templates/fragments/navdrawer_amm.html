@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 	<head th:fragment="navdrawer_amm_css">
-		<link th:href="@{/css/navdrawer_amm_style.css}" rel="stylesheet">
+		<link th:href="@{/css/fragments_style/navdrawer_amm_style.css}" rel="stylesheet">
 	</head>
 	
 	<body>
@@ -12,9 +12,9 @@
 		            <ul class="list_operation">
 		                <li><a href="/home_amm.html" th:href="@{'/admin/homeAmm'}">Home Admin</a></li>
 		                <li><a href="/inserisci_videogame_amm.html" th:href="@{'/admin/insertVideogame'}">Insert Videogame</a></li>
-		                <li><a href="/inserisci_accessorio_amm.html" th:href="@{'/admin/insertAccessorio'}">Insert Accessory</a></li>
-		                <li><a href="/vedi_videogame_amm.html" th:href="@{'/admin/showDeleteVideogameAmm'}">Show/Delete Videogame</a></li>
-		                <li><a href="/vedi_accessorio_amm.html" th:href="@{'/admin/showDeleteAccessorioAmm'}">Show/Delete Accessory</a></li>
+		                <li><a href="/inserisci_accessorio_amm.html" th:href="@{'/admin/insertAccessory'}">Insert Accessory</a></li>
+		                <li><a href="/vedi_videogame_amm.html" th:href="@{'/admin/showDeleteVideogamesAmm'}">Show/Delete Videogame</a></li>
+		                <li><a href="/vedi_accessorio_amm.html" th:href="@{'/admin/showDeleteAccessoriesAmm'}">Show/Delete Accessory</a></li>
 		            </ul>
 		        </div>
 		    </nav>

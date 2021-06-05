@@ -41,8 +41,8 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 // authorization paragraph: qui definiamo chi può accedere a cosa
                 .authorizeRequests()
                 // chiunque (autenticato o no) può accedere alle pagine index, login, register, ai css e alle immagini
-                .antMatchers(HttpMethod.GET, "/", "/index", "/informazioni", "/videogame", "/dettaglioVideogame/**",
-                		"/login", "/register", "/accessori", "dettaglioAccessori", "/css/**", "/images/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/", "/index", "/information", "/videogames", "/detailsVideogame/**",
+                		"/login", "/register", "/accessories", "detailsAccessory/**", "/css/**", "/images/**").permitAll()
                 // chiunque (autenticato o no) può mandare richieste POST al punto di accesso per login e register 
                 .antMatchers(HttpMethod.POST, "/login","/register").permitAll()
                 // solo gli utenti autenticati con ruolo ADMIN possono accedere a risorse con path /admin/**
@@ -79,9 +79,9 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
                 //use the autowired datasource to access the saved credentials
                 .dataSource(this.datasource)
                 //retrieve username and role
-                .authoritiesByUsernameQuery("SELECT username, role FROM credenziali WHERE username=?")
+                .authoritiesByUsernameQuery("SELECT username, role FROM credentials WHERE username=?")
                 //retrieve username, password and a boolean flag specifying whether the user is enabled or not (always enabled in our case)
-                .usersByUsernameQuery("SELECT username, password, 1 as enabled FROM credenziali WHERE username=?");
+                .usersByUsernameQuery("SELECT username, password, 1 as enabled FROM credentials WHERE username=?");
     }
 
     /**

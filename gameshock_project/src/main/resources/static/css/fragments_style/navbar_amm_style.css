@@ -88,6 +88,7 @@ HEADER
     text-decoration: none;
     padding: 10px;
     transition: all 0.1s ease-in-out;
+    font-size: 20px;
 }
 
 .menu li a:hover{

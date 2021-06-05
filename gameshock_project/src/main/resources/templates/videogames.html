@@ -4,7 +4,7 @@
     <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.videogame})"></head>
 	<head th:insert="fragments/navbar.html :: navbar_css"> </head>
 	<head th:insert="fragments/footer.html :: footer_css"> </head>
-    <link th:href="@{/css/videogame_style.css}" rel="stylesheet">
+    <link th:href="@{/css/videogame_style/videogames_style.css}" rel="stylesheet">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
         <div class="collection_videogame">
         
             <div class="box_videogame" th:each="videogame : ${videogames}">
-                <a href="dettagli_videogame.html" th:href="@{'/dettaglioVideogame/' + ${videogame.code}}">
+                <a href="dettagli_videogame.html" th:href="@{'/detailsVideogame/' + ${videogame.code}}">
                     <img th:src="*{'data:image/jpeg;base64,'+ {videogame.image}}" alt="">
                     <h2 th:text="${videogame.name}">Nome Gioco</h2>
                     <h3 class="prezzo" th:text="${videogame.newPrice}">50$</h3>

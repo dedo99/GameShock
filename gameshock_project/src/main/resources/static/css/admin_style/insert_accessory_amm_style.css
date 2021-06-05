@@ -10,7 +10,7 @@ CONTENT PAGE
     width: calc(100% - 250px);
     text-align: center;
     padding: 50px;
-    background: url(../images/scontro-controller.jpg) center center;
+    background: url(../../images/admin_images/clash_controller.jpg) center center;
     background-size: cover;
     background-attachment: scroll;
 }

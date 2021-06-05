@@ -28,7 +28,7 @@ public class VideogameValidator implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "rating", "required");
 		ValidationUtils.rejectIfEmpty(errors, "newPrice", "required");
 		ValidationUtils.rejectIfEmpty(errors, "usedPrice", "required");
-		ValidationUtils.rejectIfEmpty(errors, "dateRelease", "required");
+		ValidationUtils.rejectIfEmpty(errors, "releaseDate", "required");
 		ValidationUtils.rejectIfEmpty(errors, "genre", "required");
 		ValidationUtils.rejectIfEmpty(errors, "pegi", "required");
 		ValidationUtils.rejectIfEmpty(errors, "publisher", "required");

@@ -64,7 +64,7 @@ public class AccessoryController {
     	return "admin/insert_accessory_amm";
     }
 	
-	@RequestMapping(value = "/admin/showDeleteAccessorioAmm", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/showDeleteAccessoriesAmm", method = RequestMethod.GET)
 	public String showAccessoriesAmm(Model model) {
 		model.addAttribute("accessories", this.accessoryService.getAllAccessories());
 		return "admin/show_accessories_amm";

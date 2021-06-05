@@ -19,12 +19,12 @@ public class AuthenticationController {
 	private CredentialsService credenzialiService;
 	
 	@RequestMapping(value = "/admin/homeAmm", method = RequestMethod.GET)
-	public String visualizzaHomeAmm() {
+	public String showHomeAmm() {
 		return "admin/home_amm";
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String visualizzaFormLogin() {
+	public String showFormLogin() {
 		return "login_amm";
 	}
 	

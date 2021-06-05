@@ -10,7 +10,7 @@ CONTENT PAGE
     min-height: calc(100vh -80px);
     text-align: center;
     padding: 50px;
-    background: url(../images/scontro-controller.jpg) center center;
+    background: url(../../images/admin_images/clash_controller.jpg) center center;
     background-size: cover;
     background-attachment: scroll;
 }
