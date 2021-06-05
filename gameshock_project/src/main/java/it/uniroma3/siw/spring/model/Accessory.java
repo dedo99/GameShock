@@ -1,35 +1,31 @@
 package it.uniroma3.siw.spring.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.EqualsAndHashCode.Exclude;
-import lombok.NonNull;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
+@NoArgsConstructor
 public class Accessory extends Item {
 
-	@NonNull
 	@Exclude
 	private String color;
 
-	@NonNull
 	@Exclude
+	@Enumerated(EnumType.STRING)
 	private Category category;
 
-	@Exclude
-	@ManyToMany(mappedBy="accessories")
-	private List<Platform> platforms;
+	@ManyToOne
+	private Platform platform;
 
-	@Exclude
-	@ManyToMany(mappedBy="accessories")
-	private List<Amministrator> amministrators;
 }

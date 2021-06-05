@@ -1,0 +1,60 @@
+/* --------
+TABLE 
+-------------*/
+
+.background_page{
+    background: url(../images/video-game-controls-neon-style-brick-wall_24908-58916.jpg);
+    background-size: cover;
+    padding-bottom: 40px;
+}
+
+/* --------
+TABLE 
+-------------*/
+
+table {
+    /*border-collapse: collapse;*/
+    /* border: 2px solid red; */
+    margin: auto;
+    letter-spacing: 1px;
+    border-spacing: 30px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+caption {
+    font-size: 70px;
+    margin-top: 30px;
+    margin-bottom: -40px;
+}
+
+caption p{
+    background-color: rgba(255, 255, 255, 0.671);
+    border-radius: 50px;
+    padding: 0px;
+    width: 700px;
+    color: green;
+}
+
+.carta_sconti {
+    margin-top: -55px;
+}
+
+td.riga , th {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+td {
+    font-size: 30px;
+}
+
+.chiuso {
+    color: red;
+}
+
+@media (max-width: 768px){
+
+    
+}

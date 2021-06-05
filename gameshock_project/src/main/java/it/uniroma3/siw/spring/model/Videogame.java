@@ -1,45 +1,40 @@
 package it.uniroma3.siw.spring.model;
 
-import java.time.LocalDate;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.EqualsAndHashCode.Exclude;
-import lombok.NonNull;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
+@NoArgsConstructor
 public class Videogame extends Item {
 
 	@Column(nullable=false)
 	@Exclude
-	private LocalDate dateRelease;
+	private String dateRelease;
 
-	@NonNull
 	@Exclude
+	@Enumerated(EnumType.STRING)
 	private Genre genre;
 
-	@NonNull
 	@Exclude
 	private Integer pegi;
 
-	@NonNull
 	@Exclude
 	private String publisher;
 	
 	@Exclude
-	@ManyToMany(mappedBy="videogames")
-	private List<Platform> platforms;
+	@ManyToOne
+	private Platform platform;
 
-	@Exclude
-	@ManyToMany(mappedBy="videogames")
-	private List<Amministrator> amministrators;
 }

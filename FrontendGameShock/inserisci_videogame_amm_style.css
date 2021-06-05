@@ -203,17 +203,40 @@ CONTENT PAGE
     position: absolute;
     top: 80px;
     left: 250px;
-    height: calc(100% - 80px);
+    height: auto;
     width: calc(100% - 250px);
     text-align: center;
     padding: 50px;
+    background: url(img/scontro-controller.jpg) center center;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.content_page h3{
+    font-size: 50px;
+    background: -webkit-linear-gradient(rgba(219,70,252,1), rgba(63,94,251,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content_page h6{
+    width: auto;
+    background: #ffffff8e;
+    display: block;
+    color: green;
+    padding: 5px 10px;
+    margin: 20px 0px 5px 0px;
+    border-radius: 15px;
 }
 
 .content_page form{
     padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.content_page form input{
+.content_page form input[type=text]{
     width: 500px;
     height: 30px;
 }
@@ -223,5 +246,31 @@ CONTENT PAGE
     height: 100px;
 }
 
+.content_page form input[type=text], textarea{
+    border-radius: 10px;
+    outline: none;
+    border: 1px dashed black;
+    color: rgba(63,94,251,1);
+}
 
+.content_page form input[type=text]:focus, textarea:focus{
+    border: 2px solid rgba(219,70,252,1);
+    background-color: rgb(226, 226, 226);
+    transition: 0.5s;
+}
 
+.content_page form input[type=submit]{
+    border-radius: 10px;
+    padding: 5px 40px;
+    background-color: rgba(219,70,252,1);
+    border: none;
+}
+
+.content_page form input[type=submit]:hover{
+    background-color: rgba(63,94,251,1);
+    transition: 0.5s;
+}
+
+.content_page form input[type=file]{
+    background-color: #ffffff8e;
+}
