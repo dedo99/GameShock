@@ -30,11 +30,12 @@ video{
     z-index: 1;
 }
 
-.login_form h6{
-    margin-top: 30px;
+.login_form h5{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-.login_form h3{
+.login_form h2{
     margin: 10px;
     font-size: 50px;
     font-family: 'Lobster', cursive;
@@ -49,8 +50,9 @@ video{
 
 input[type=text], input[type=password]{
     outline: none;
-    width: 250px;
-    height: 30px;
+    font-size: 17px;
+    width: 260px;
+    height: 35px;
     border-radius: 15px;
     border: none;
     border-bottom: 1px solid grey;
@@ -77,10 +79,11 @@ input[type=password]:focus{
 }
 
 input[type=submit]{
-    margin: 20px 0px;
+    margin: 0px 0px;
     border-radius: 15px;
-    height: 40px;
-    width: 110px;
+    font-size: 25px;
+    height: 60px;
+    width: 130px;
     background: linear-gradient(180deg, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);
     border: none;
     color: #fff;

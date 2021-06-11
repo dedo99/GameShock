@@ -20,6 +20,7 @@ CONTENT PAGE
     background: -webkit-linear-gradient(rgba(219,70,252,1), rgba(63,94,251,1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
 }
 
 .content_page h6{
@@ -33,7 +34,7 @@ CONTENT PAGE
 }
 
 .content_page form{
-    padding-bottom: 100px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +63,10 @@ CONTENT PAGE
     transition: 0.5s;
 }
 
-.content_page form input[type=submit]{
+.content_page form input[type=submit] {
+	width: 120px;
+	height: 40px;
+	font-size: 20px;
     border-radius: 10px;
     padding: 5px 40px;
     background-color: rgba(219,70,252,1);

@@ -83,7 +83,12 @@ COLLECTION VIDEOGAME
     color: black;
 }
 
-.prezzo{
+.box_videogame h2,h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.box_videogame h3 {
     color: green;
     font-weight: bolder;
 }

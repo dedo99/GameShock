@@ -13,7 +13,7 @@
 
     <section class="videogame_content">
         <div class="title_and_search">
-            <h1>Videogame</h1>
+            <h1>Videogames</h1>
             <form action="#">
                 <input type="text" placeholder="ricerca nome videogame">
                 <input type="submit" value="Search">
@@ -24,9 +24,9 @@
         
             <div class="box_videogame" th:each="videogame : ${videogames}">
                 <a href="dettagli_videogame.html" th:href="@{'/detailsVideogame/' + ${videogame.code}}">
+                	<h2 th:text="${videogame.name}">Nome Gioco</h2>
                     <img th:src="*{'data:image/jpeg;base64,'+ {videogame.image}}" alt="">
-                    <h2 th:text="${videogame.name}">Nome Gioco</h2>
-                    <h3 class="prezzo" th:text="${videogame.newPrice}">50$</h3>
+                    <h3 th:text="${videogame.platform.name}">50$</h3>
                 </a>
             </div>
 
