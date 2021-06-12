@@ -24,6 +24,13 @@
             });
      
         });
+        
+        $(document).ready(function(){
+            $( ".hamburger_navdrawer" ).click(function() {
+            $( ".navdrawer" ).toggleClass( "navdrawer--open" );
+            });
+     
+        });
     
         ScrollReveal().reveal('.reveal', { easing: 'cubic-bezier(.77,.34,.10,1.0)', distance: '150px' , duration: 2000, interval: 600 });
     

@@ -30,10 +30,12 @@
 	                <h6><span>Code: </span><span th:text="${videogame.code}">codiceprova</span></h6>
 	                <h6><span>Platform: </span><span th:text="${videogame.platform.name}">nomepiattaforma</span></h6>					
 	            </a>
-	            <a class="cestino" th:href="@{'/admin/deleteVideogameAmm/' + ${videogame.code}}"><img th:src="@{/images/icona_cestino.png}" alt=""></a>
+	            <a class="cestino" th:href="@{'/admin/deleteVideogameAmm/' + ${videogame.code}}"><img th:src="@{/images/general_images/icona_cestino.png}" alt=""></a>
 	        </div>
 	        
 	    </section>
+	    
+	    <script th:replace="fragments/base.html :: script"></script>
 	
 	
 	</body>

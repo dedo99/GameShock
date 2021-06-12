@@ -112,11 +112,15 @@ i.fas.fa-bars.fa-2x.wt {
 @media (max-width: 768px){
 
     .navbar{
-        width: 100%;
+        width: 100vw;
         margin: 0px;
     }
 
-    .menu{
+	.menu{
+		display: none;
+	}
+
+    /*.menu{
         position: absolute;
         top: 0;
         right: -100%;
@@ -132,7 +136,7 @@ i.fas.fa-bars.fa-2x.wt {
 
     .menu--open{
         right: 0%;
-    }
+    }*/
 
     .menu li{
         margin: 10px 0;

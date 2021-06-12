@@ -42,3 +42,35 @@ NAVDRAWER
     color: rgba(219,70,252,1);
 }
 
+.visibility_mobile{
+	display: none;
+}
+
+
+@media (max-width: 768px){
+	
+	.visibility_mobile{
+		display: block;
+	}
+	
+	.navdrawer{
+		position: fixed;
+		display: none;
+		right: -100vw;
+		height: calc(100vh - 80px);
+		width: 100vw;
+		z-index: 10;
+	}
+	
+	.navdrawer--open{
+		display: block;
+		right: 0%;
+	}
+	
+	.navdrawer_content{
+		padding-top: 10px;
+		height: 95%;
+	}
+	
+}
+

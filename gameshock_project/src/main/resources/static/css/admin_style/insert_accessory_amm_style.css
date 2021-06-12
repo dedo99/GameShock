@@ -17,6 +17,7 @@ CONTENT PAGE
 
 .content_page h3{
     font-size: 50px;
+    font-family: 'Lobster', cursive;
     background: -webkit-linear-gradient(rgba(219,70,252,1), rgba(63,94,251,1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -76,4 +77,36 @@ CONTENT PAGE
 
 .content_page form input[type=file]{
     background-color: #ffffff8e;
+}
+
+@media (max-width: 768px){
+	
+	.content_page{
+		padding: 20px;
+		width: 100vw;
+		top: 80px;
+		left: 0px;
+	}
+	
+	.content_page h1{
+		font-size: 35px;
+	    padding: 5px 10px;
+	    margin: 10px;
+	}
+	
+	.content_page h4{
+	    font-size: 20px;
+	    padding: 5px 10px;
+	    margin: 10px;
+	}
+	
+	.content_page form input[type=text]{
+	    width: 90%;
+	    height: 30px;
+	}
+	
+	.content_page form textarea{
+	    width: 90%;
+	    height: 100px;
+	}
 }
