@@ -39,6 +39,7 @@ public class AuthenticationController {
     	UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     	Credentials credentials = credenzialiService.getCredentials(userDetails.getUsername());
     	if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
+    		model.addAttribute("userDetails",userDetails);
             return "admin/home_amm";
         }
     	return "index";

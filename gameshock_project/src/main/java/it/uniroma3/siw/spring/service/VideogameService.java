@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import it.uniroma3.siw.spring.model.Genre;
+import it.uniroma3.siw.spring.model.Platform;
 import it.uniroma3.siw.spring.model.Videogame;
 import it.uniroma3.siw.spring.repository.VideogameRepository;
 
@@ -56,6 +56,11 @@ public class VideogameService {
 	}
 	
 	@Transactional
+	public List<Videogame> getAllVideogamesByPlatform(Platform platform) {
+		return this.videogamerepository.findByPlatform(platform);
+	}
+	
+	@Transactional
 	public List<Videogame> searchVideogames(String paramSearch) {
 		if(paramSearch.equals("")) {
 			return this.getAllVideogames();
@@ -79,10 +84,4 @@ public class VideogameService {
 		}
         this.addVideogame(videogame);
 	}
-
-
-	public List<Videogame> getAllVideogamesWithGenre(Genre genre) {
-		return this.videogamerepository.findByGenre(genre);
-	}
-	
 }

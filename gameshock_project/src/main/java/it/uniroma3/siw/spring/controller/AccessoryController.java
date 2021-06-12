@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import it.uniroma3.siw.spring.controller.validator.AccessoryValidator;
 import it.uniroma3.siw.spring.model.Accessory;
+import it.uniroma3.siw.spring.model.Platform;
 import it.uniroma3.siw.spring.service.AccessoryService;
 
 @Controller
@@ -36,7 +37,10 @@ public class AccessoryController {
 	
 	@RequestMapping(value = "/detailsAccessory/{code}", method = RequestMethod.GET)
 	public String showDetailsAccessory(@PathVariable("code") String code, Model model) {
-		model.addAttribute("accessory", this.accessoryService.getSingleAccessory(code));
+		Accessory a = this.accessoryService.getSingleAccessory(code);
+		model.addAttribute("accessory", a);
+		Platform p = a.getPlatform();
+		model.addAttribute("accessoriesRec", this.accessoryService.getAllAccessoriesByPlatform(p));
 		return "details_accessory";
 	}
 	
@@ -73,12 +77,13 @@ public class AccessoryController {
 	@RequestMapping(value = "/admin/deleteAccessoryAmm/{code}", method = RequestMethod.GET)
 	public String deleteAccessoryAmm(@PathVariable("code") String code, Model model) {
 		this.accessoryService.deleteAccessory(code);
+		model.addAttribute("accessories", this.accessoryService.getAllAccessories());
 		return "admin/show_accessories_amm";
 	}
 	
-//	@RequestMapping(value = "/admin/ricercaAccessorio", method = RequestMethod.POST)
-//	public String cercaVideogameAmm(@RequestParam("param") String paramSearch, Model model) {
-//		model.addAttribute("accessori", this.accessoryService.searchAccessories(paramSearch));
-//		return "admin/vedi_accessorio_amm";
-//	}
+	@RequestMapping(value = "/admin/researchAccessory", method = RequestMethod.POST)
+	public String cercaVideogameAmm(@RequestParam("param") String paramSearch, Model model) {
+		model.addAttribute("accessories", this.accessoryService.searchAccessories(paramSearch));
+		return "admin/show_accessories_amm";
+	}
 }

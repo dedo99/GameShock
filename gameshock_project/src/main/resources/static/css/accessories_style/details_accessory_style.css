@@ -13,6 +13,7 @@ SHOWCASE ACCESSORIO
     border-right: 2px solid grey;
     width: 50%;
     text-align: center;
+     padding-top: 10px;
 }
 
 .img_accessorio img{
@@ -27,16 +28,21 @@ SHOWCASE ACCESSORIO
     font-family: 'Balsamiq Sans', cursive;
 }
 
+.info_accessorio h1 {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
 .new_price{
     border-radius: 20px;
     background: green;
-    padding: 10px;
+    padding: 7px;
 }
 
 .old_price{
     border-radius: 20px;
     background: red;
-    padding: 10px;
+    padding: 7px;
 }
 
 .more_info{
@@ -52,6 +58,33 @@ SHOWCASE ACCESSORIO
 
 .more_info h2 {
     display: inline-block;
+    margin-left: 10px;
+}
+
+.more_info p {
+	margin-left: 25px;
+}
+
+.description h2{
+	display: block;
+	margin-bottom: 15px;
+}
+
+.accessory p {
+	margin-right: 0px;
+}
+
+.rating p {
+	margin-right: 0px;
+}
+
+.rating span {
+	font-size: 50px;
+    color: blueviolet;
+}
+
+.description p{
+	margin-bottom: 10px;
 }
 
 .content_specific{
@@ -92,7 +125,7 @@ RECOMMENDED PRODUCTS
 
 .recommended{
     /* border: 2px solid green; */
-    background: url(../images/video-game-controls-neon-style-brick-wall_24908-58916.jpg);
+    background: url(../../images/general_images/controller_xbox.jpg);
     background-size: cover;
     text-align: center;
     padding-top: 40px;
@@ -103,7 +136,7 @@ RECOMMENDED PRODUCTS
     background: rgba(255, 255, 255, 0.753);
     width: 900px;
     text-align: center;
-    margin: 40px auto;
+    margin: 20px auto;
     border-radius: 20px;
     padding: 10px 0px;
 }
@@ -133,12 +166,22 @@ RECOMMENDED PRODUCTS
 
 .box_recommended_products img{
     align-items: center;
+    height: 250px;
 }
 
-
-.box_recommended_products:hover{
-    -webkit-box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87); 
+.box_recommended_products:hover {
+	-webkit-box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87); 
     box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87);
+}
+
+.box_recommended_products h2,h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.box_recommended_products h3 {
+    color: green;
+    font-weight: bolder;
 }
 
 .box_recommended_products a{

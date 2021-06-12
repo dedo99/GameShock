@@ -6,4 +6,5 @@ import it.uniroma3.siw.spring.model.Platform;
 
 public interface PlatformRepository extends CrudRepository<Platform,String> {
 
+	
 }

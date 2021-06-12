@@ -15,8 +15,7 @@ CONTENT PAGE
     background-attachment: scroll;
 }
 
-.content_page h3{
-    font-size: 50px;
+.content_page h1{
     background: -webkit-linear-gradient(rgba(219,70,252,1), rgba(63,94,251,1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

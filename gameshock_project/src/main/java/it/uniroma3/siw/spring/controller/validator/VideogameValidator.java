@@ -6,7 +6,9 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import it.uniroma3.siw.spring.model.Genre;
 import it.uniroma3.siw.spring.model.Videogame;
+import it.uniroma3.siw.spring.service.PlatformService;
 import it.uniroma3.siw.spring.service.VideogameService;
 
 @Component
@@ -14,6 +16,9 @@ public class VideogameValidator implements Validator{
 	
 	@Autowired
 	private VideogameService videogameService;
+	
+	@Autowired
+	private PlatformService platformService;
 
 	@Override
 	public boolean supports(Class<?> clazz) {
@@ -23,6 +28,7 @@ public class VideogameValidator implements Validator{
 	@Override
 	public void validate(Object target, Errors errors) {
 		Videogame videogame = (Videogame) target;
+		Float rating = videogame.getRating();
 		ValidationUtils.rejectIfEmpty(errors, "code", "required");
 		ValidationUtils.rejectIfEmpty(errors, "name", "required");
 		ValidationUtils.rejectIfEmpty(errors, "rating", "required");
@@ -38,6 +44,12 @@ public class VideogameValidator implements Validator{
 		if(!errors.hasErrors()) {
 			if(this.videogameService.alreadyExistsVideogame(videogame)) {
 				errors.reject("videogameDuplicato");
+			}
+//			if(!this.platformService.getAllPlatforms().contains(videogame.getPlatform())) {
+//				errors.reject("piattaformaNonEsistente");
+//			}
+			if(rating > 10 || rating < 0) {
+				errors.reject("ratingNonValido");
 			}
 		}
 		
