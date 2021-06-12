@@ -15,25 +15,37 @@
 	            <img th:src="*{'data:image/jpeg;base64,'+ {videogame.image}}" alt="">
 	        </div>
 	        <div class="info_videogame">
-	            <h1>Nome Videogame</h1>
-	            <h3><span>Codice:</span><span th:text="${videogame.code}">codice1</span> </h3>
-	            <h3><span>Genere:</span><span th:text="${videogame.genre}">genere1</span> </h3>
-	            <h3><span class="new_price">Prezzo nuovo: </span><span class="new_price" th:text="${videogame.newPrice}">100$</span></h3>
-	            <h3><span class="old_price">Prezzo usato: </span><span class="old_price" th:text="${videogame.usedPrice}">50$</span></h3>
+	            <h1 th:text="${videogame.name}">Nome Videogame</h1>
+	            <h3><span>Product Code: </span><span th:text="${videogame.code}">codice</span> </h3>
+	            <h3><span>Genre: </span><span th:text="${videogame.genre}">genere</span> </h3>
+	            <h3><span>Edition: </span><span th:text="${videogame.edition}">edizione</span> </h3>
+	            <h3><span>Release Date: </span><span th:text="${videogame.releaseDate}">data rilascio</span> </h3>
+	            <h3>
+	            	<span class="new_price">New Price:</span>
+	            	<span th:text="${videogame.newPrice}">100$</span>
+	            	<span>€</span>
+            	</h3>
+	            <h3>
+	            	<span class="old_price">Used Price:</span>
+	            	<span th:text="${videogame.usedPrice}">50$</span>
+	            	<span>€</span>
+            	</h3>
 	        </div>
 	    </section>
 	
 	    <section class="more_info">
-	        <div class="content_specific">
-	            <h2>Pegi:</h2>
-	            <p th:text="${videogame.pegi}"> 5</p>
+	    	<div class="content_specific platform">
+	            <h2>Platform:</h2>
+	            <p th:text="${videogame.platform.name}">playstation</p>
+	            <p>By</p>
+	            <p th:text="${videogame.platform.society.name}">sony</p>
 	        </div>
-	        <div class="content_specific">
+	    	<div class="content_specific">
 	            <h2>Publisher:</h2>
 	            <p th:text="${videogame.publisher}"> Ubisoft</p>
 	        </div>
-	        <div class="content_specific">
-	            <h2>Descrizione:</h2>
+	    	<div class="content_specific description">
+	            <h2>Description:</h2>
 	            <p th:text="${videogame.description}">Lorem ipsum dolor sit amet consectetur adipisicing 
 	                elit. Ad quas quasi, sed ducimus qui, dolorem totam,
 	                possimus atque vero hic accusantium assumenda non 
@@ -41,28 +53,28 @@
 	            </p>
 	        </div>
 	        <div class="content_specific">
-	            <h2>Voto:</h2>
+	            <h2>Pegi:</h2>
+	            <p th:text="${videogame.pegi}">5</p>
+	        </div>
+	        <div class="content_specific rating">
+	            <h2>Rating:</h2>
 	            <p th:text="${videogame.rating}">5</p>
+	            <span>/10</span>
 	        </div>
-	        <div class="content_specific">
-	            <h2>Data di rilascio:</h2>
-	            <p th:text="${videogame.releaseDate}">15/10/2020</p>
-	        </div>
-	
 	    </section>
 	
 	
 	    <section class="recommended">
-	        <h1>VideoGame consigliati</h1>
+	        <h1>You may also like...</h1>
 	
-	        <div class="recommended_products">
+	        <!--<div class="recommended_products">
 	            <div class="box_recommended_products" th:each="videogameRec : ${videogamesRec}">
-	                <a href="dettagli_videogame.html">
-	                    <img th:src="*{'data:image/jpeg;base64,'+ {videogame.image}}" alt="">
-	                    <h2 th:text="${videogameRec.name}">Nome Gioco</h2>
-	                    <h3 class="prezzo" th:text="${videogameRec.newPrice}">50$</h3>
+	                <a href="dettagli_videogame.html" th:href="@{'/detailsVideogame/' + ${videogameRec.code}}">
+	                	<h2 th:text="${videogameRec.name}">Nome Gioco</h2>
+	                    <img th:src="*{'data:image/jpeg;base64,'+ {videogameRec.image}}" alt="">
+	                    <h3 th:text="${videogameRec.platform.name}">playstation</h3>
 	                </a>
-	            </div>
+	            </div>-->
 	
 	    </section>
 	

@@ -22,19 +22,16 @@
 	        </div>
 	
 	        <div class="content_item" th:each="videogame : ${videogames}">
-	            <a href="dettagli_videogame.html" class="link_item">
+	            <a href="dettagli_videogame.html" th:href="@{'/detailsVideogame/' + ${videogame.code}}" class="link_item">
 	                <div class="img_item">
 	                    <img th:src="*{'data:image/jpeg;base64,'+{videogame.image}}" alt="">
 	                </div>
-	                <h6><span>Name: </span><span th:text="${videogame.name}">nomeprova</span></h6>
-	                <h6><span>Code: </span><span th:text="${videogame.code}">codiceprova</span></h6>
-	                <h6><span>Platform: </span><span th:text="${videogame.platform.name}">nomepiattaforma</span></h6>					
+	                <h5><span>Name: </span><span th:text="${videogame.name}">nomeprova</span></h5>
+	                <h5><span>Platform: </span><span th:text="${videogame.platform.name}">nomepiattaforma</span></h5>					
 	            </a>
-	            <a class="cestino" th:href="@{'/admin/deleteVideogameAmm/' + ${videogame.code}}"><img th:src="@{/images/icona_cestino.png}" alt=""></a>
+	            <a class="cestino" th:href="@{'/admin/deleteVideogameAmm/' + ${videogame.code}}"><img th:src="@{/images/general_images/basket_icon.png}" alt=""></a>
 	        </div>
-	        
 	    </section>
-	
-	
+	    
 	</body>
 </html>

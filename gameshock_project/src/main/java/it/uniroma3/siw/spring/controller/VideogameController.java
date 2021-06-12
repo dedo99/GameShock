@@ -43,7 +43,7 @@ public class VideogameController {
 		Videogame v = this.videogameService.getSingleVideogame(code);
 		model.addAttribute("videogame", v);
 		logger.debug(v.getGenre().name());
-		model.addAttribute("videogamesRec", this.videogameService.getAllVideogamesWithGenre(v.getGenre()));
+		//model.addAttribute("videogamesRec", this.videogameService.getAllVideogamesWithGenre(v.getGenre()));
 		return "details_videogame.html";
 	}
 	
@@ -74,6 +74,7 @@ public class VideogameController {
 	@RequestMapping(value = "/admin/deleteVideogameAmm/{code}", method = RequestMethod.GET)
 	public String deleteVideogameAmm(@PathVariable("code") String code, Model model) {
 		this.videogameService.deleteVideogame(code);
+		model.addAttribute("videogames", this.videogameService.getAllVideogames());
 		return "admin/show_videogames_amm";
 	}
 	

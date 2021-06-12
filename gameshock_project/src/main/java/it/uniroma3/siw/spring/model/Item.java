@@ -1,5 +1,6 @@
 package it.uniroma3.siw.spring.model;
 
+import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
@@ -22,6 +23,7 @@ public abstract class Item {
 	private String name;
 	
 	@Exclude
+	@Column(length = 2500)
 	private String description;
 	
 	@Exclude
