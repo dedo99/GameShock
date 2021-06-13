@@ -29,6 +29,9 @@ public class Videogame extends Item {
 
 	@Exclude
 	private Integer pegi;
+	
+	@Exclude
+	private String edition;
 
 	@Exclude
 	private String publisher;

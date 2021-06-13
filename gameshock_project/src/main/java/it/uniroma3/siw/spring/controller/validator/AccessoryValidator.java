@@ -23,6 +23,7 @@ public class AccessoryValidator implements Validator{
 	@Override
 	public void validate(Object target, Errors errors) {
 		Accessory accessory = (Accessory) target;
+		Float rating = accessory.getRating();
 		ValidationUtils.rejectIfEmpty(errors, "code", "required");
 		ValidationUtils.rejectIfEmpty(errors, "name", "required");
 		ValidationUtils.rejectIfEmpty(errors, "rating", "required");
@@ -36,6 +37,12 @@ public class AccessoryValidator implements Validator{
 		if(!errors.hasErrors()) {
 			if(this.accessoryService.alreadyExistsAccessory(accessory)) {
 				errors.reject("accessorioDuplicato");
+			}
+//			if(!this.platformService.getAllPlatforms().contains(videogame.getPlatform())) {
+//			errors.reject("piattaformaNonEsistente");
+//		}
+			if(rating > 10 || rating < 0) {
+				errors.reject("ratingNonValido");
 			}
 		}
 		

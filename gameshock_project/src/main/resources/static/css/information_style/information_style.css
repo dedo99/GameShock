@@ -3,9 +3,6 @@ BACKGROUND
 -------------*/
 
 .background_page{
-	position: absolute;
-	top: 80px;
-	width: 100%;
     background: url(../../images/information_images/controller_neon.jpg);
     background-size: cover;
     padding-bottom: 40px;
@@ -60,42 +57,31 @@ td {
 }
 
 @media (max-width: 768px){
-	
-	table {
-	    width: 100%;
-	    border-spacing: 7px;
-	    text-align: center;
-	    background-color: #fff;
-	    border-radius: 10px;
-	}
-	
-	#dove_siamo {
-		text-align: center;
-		margin-left: 0px;
-		font-size: 15px;
-	}
 
-
-    td.riga , th {
-		font-size: 12px;
+    table{
+		width:365px;
+		overflow-x: auto;
+		border-spacing: 10px;
 	}
 	
-	
-	td {
-	    font-size: 20px;
+	caption p, #dove_siamo p{
+    	font-size: 40px;
+    	width:365px;
+    }
+    
+    #dove_siamo p {
+		margin-top: 40px;
 	}
 	
-	
-	.carta_sconti {
-	    margin-top: 0px;
-	    font-size: 20px;
+	.carta_sconti p {
+		margin-top: 60px;
 	}
 	
-	
-	caption p , #dove_siamo p{
-		font-size: 35px;
-		margin: 50px 0px 20px 0px;
-		width: 100vw;
+	td.riga , th {
+    	font-size: 15px;
+    }
+    
+    td {
+    font-size: 15px;
 	}
-	
 }

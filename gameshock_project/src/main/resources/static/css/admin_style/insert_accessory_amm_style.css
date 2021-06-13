@@ -5,9 +5,9 @@ CONTENT PAGE
 .content_page{
     position: absolute;
     top: 80px;
-    left: 250px;
+    left: 260px;
     height: auto;
-    width: calc(100% - 250px);
+    width: calc(100% - 260px);
     text-align: center;
     padding: 50px;
     background: url(../../images/admin_images/clash_controller.jpg) center center;
@@ -15,12 +15,11 @@ CONTENT PAGE
     background-attachment: scroll;
 }
 
-.content_page h3{
-    font-size: 50px;
-    font-family: 'Lobster', cursive;
+.content_page h1{
     background: -webkit-linear-gradient(rgba(219,70,252,1), rgba(63,94,251,1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+     margin-bottom: 15px;
 }
 
 .content_page h6{
@@ -34,7 +33,7 @@ CONTENT PAGE
 }
 
 .content_page form{
-    padding-bottom: 100px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,8 +63,11 @@ CONTENT PAGE
 }
 
 .content_page form input[type=submit]{
+    width: 110px;
+	height: 40px;
+	font-size: 25px;
     border-radius: 10px;
-    padding: 5px 40px;
+    padding: 5px;
     background-color: rgba(219,70,252,1);
     border: none;
 }
@@ -77,36 +79,4 @@ CONTENT PAGE
 
 .content_page form input[type=file]{
     background-color: #ffffff8e;
-}
-
-@media (max-width: 768px){
-	
-	.content_page{
-		padding: 20px;
-		width: 100vw;
-		top: 80px;
-		left: 0px;
-	}
-	
-	.content_page h1{
-		font-size: 35px;
-	    padding: 5px 10px;
-	    margin: 10px;
-	}
-	
-	.content_page h4{
-	    font-size: 20px;
-	    padding: 5px 10px;
-	    margin: 10px;
-	}
-	
-	.content_page form input[type=text]{
-	    width: 90%;
-	    height: 30px;
-	}
-	
-	.content_page form textarea{
-	    width: 90%;
-	    height: 100px;
-	}
 }

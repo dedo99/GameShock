@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.videogame})"></head>
-	<head th:insert="fragments/navbar.html :: navbar_css"> </head>
-	<head th:insert="fragments/footer.html :: footer_css"> </head>
-    <link th:href="@{/css/videogame_style/videogames_style.css}" rel="stylesheet">
-</head>
-<body>
-
-    <header th:replace="fragments/navbar.html :: navbar"></header>
-
-
-    <section class="videogame_content">
-        <div class="title_and_search">
-            <h1>Videogames</h1>
-            <form action="#">
-                <input type="text" placeholder="ricerca nome videogame">
-                <input type="submit" value="Search">
-            </form>
-        </div>
-
-        <div class="collection_videogame">
-        
-            <div class="box_videogame" th:each="videogame : ${videogames}">
-                <a href="dettagli_videogame.html" th:href="@{'/detailsVideogame/' + ${videogame.code}}">
-                	<h2 th:text="${videogame.name}">Nome Gioco</h2>
-                    <img th:src="*{'data:image/jpeg;base64,'+ {videogame.image}}" alt="">
-                    <h3 th:text="${videogame.platform.name}">50$</h3>
-                </a>
-            </div>
-
-        </div>
-    </section>
-    
-
-    <footer th:replace="fragments/footer.html :: footer"></footer>
-
-    <script th:replace="fragments/base.html :: script"></script>
-    
-</body>
+	<head>
+	    <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.videogame})"></head>
+		<head th:insert="fragments/navbar.html :: navbar_css"> </head>
+		<head th:insert="fragments/footer.html :: footer_css"> </head>
+	    <link th:href="@{/css/videogame_style/videogames_style.css}" rel="stylesheet">
+	</head>
+	<body>
+	
+	    <header th:replace="fragments/navbar.html :: navbar"></header>
+	
+	
+	    <section class="videogame_content">
+	        <div class="title_and_search">
+	            <h1>Videogames</h1>
+	            <form th:action="@{/researchVideogame}" method="POST">
+	                <input type="text" name="param" placeholder="research videogame">
+	                <input type="submit" value="Search">
+	            </form>
+	        </div>
+	
+	        <div class="collection_videogame">
+	        
+	            <div class="box_videogame" th:each="videogame : ${videogames}">
+	                <a href="dettagli_videogame.html" th:href="@{'/detailsVideogame/' + ${videogame.code}}">
+	                	<h2 th:text="${videogame.name}">Nome Gioco</h2>
+	                    <img th:src="*{'data:image/jpeg;base64,'+ {videogame.image}}" alt="">
+	                    <h3 th:text="${videogame.platform.name}">playstation</h3>
+	                </a>
+	            </div>
+	
+	        </div>
+	    </section>
+	    
+	
+	    <footer th:replace="fragments/footer.html :: footer"></footer>
+	
+	    <script th:replace="fragments/base.html :: script"></script>
+	    
+	</body>
 </html>

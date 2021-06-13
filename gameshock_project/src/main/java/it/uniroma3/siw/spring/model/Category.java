@@ -2,5 +2,5 @@ package it.uniroma3.siw.spring.model;
 
 public enum Category {
 
-	CONTROLLER,HEADSET,GAMINGCHAIR,CHARGING,STORAGE;
+	CONTROLLER,HEADSET,CHARGING,GAMERCHAIR;
 }

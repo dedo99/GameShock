@@ -1,3 +1,7 @@
+body, html{
+    background: rgb(200, 10, 10);
+}
+
 /* ----------
 COLLECTION VIDEOGAME
 -------------- */
@@ -11,7 +15,7 @@ COLLECTION VIDEOGAME
 .title_and_search{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 
 .title_and_search h1{
@@ -24,7 +28,7 @@ COLLECTION VIDEOGAME
 
 .title_and_search input[type=text]{
     border-radius: 10px;
-    height: 30px;
+    height: 33px;
     width: 200px;
     outline: none;
 }
@@ -35,9 +39,10 @@ COLLECTION VIDEOGAME
 }
 
 .title_and_search input[type=submit]{
-    border-radius: 10px;
-    height: 30px;
-    width: 80px;
+    border-radius: 15px;
+    font-size: 20px;
+    height: 35px;
+    width: 85px;
     background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);;
     border: none;
     color: #fff;
@@ -65,8 +70,6 @@ COLLECTION VIDEOGAME
 .box_videogame{
     border: 3px solid blue;
     background: white;
-    -webkit-box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87); 
-    box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,6 +84,15 @@ COLLECTION VIDEOGAME
 .box_videogame a{
     text-decoration: none;
     color: black;
+}
+
+.box_videogame:hover {
+	-webkit-box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87); 
+    box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87);
+}
+
+.box_videogame img{
+    height: 270px;
 }
 
 .box_videogame h2,h3 {

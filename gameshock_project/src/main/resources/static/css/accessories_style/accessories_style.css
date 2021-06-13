@@ -3,42 +3,8 @@ Configurazioni base
 -------------- */
 
 body, html{
-    margin: 0;
-    padding: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: rgb(148, 234, 255);
+    background: rgb(50, 190, 100);
 }
-
-body{
-    background: transparent;
-}
-
-
-
-*{
-    box-sizing: border-box;
-}
-
-.page{
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: white;
-}
-
-h1{font-size: 60px;}
-h2{font-size: 50px;}
-h3{font-size: 35px;}
-h4{font-size: 25px;}
-h5{font-size: 20px;}
-h6{font-size: 15px;}
-
-
-
-
-
-.wt{color: white;}
-.brwh{border: 1px solid white; border-radius: 30px; padding: 5px;}
 
 @media (max-width: 768px){
 
@@ -57,20 +23,19 @@ h6{font-size: 15px;}
 
 
 /* ----------
-COLLECTION VIDEOGAME
+COLLECTION ACCESSORY
 -------------- */
 
 
 .accessori_content{
     text-align: center;
     margin-top: 80px;
-    background: rgb(148, 234, 255);
 }
 
 .title_and_search{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-around;
 }
 
 .title_and_search h1{
@@ -83,7 +48,7 @@ COLLECTION VIDEOGAME
 
 .title_and_search input[type=text]{
     border-radius: 10px;
-    height: 30px;
+    height: 33px;
     width: 200px;
     outline: none;
 }
@@ -94,9 +59,10 @@ COLLECTION VIDEOGAME
 }
 
 .title_and_search input[type=submit]{
-    border-radius: 10px;
-    height: 30px;
-    width: 80px;
+    border-radius: 15px;
+    font-size: 20px;
+    height: 35px;
+    width: 85px;
     background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);;
     border: none;
     color: #fff;
@@ -122,8 +88,6 @@ COLLECTION VIDEOGAME
 .box_accessorio{
     border: 3px solid blue;
     background: white;
-    -webkit-box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87); 
-    box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,11 +104,21 @@ COLLECTION VIDEOGAME
     color: black;
 }
 
-.box_accessorio img{
-	height: 200px;
+.box_accessorio:hover {
+	-webkit-box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87); 
+    box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87);
 }
 
-.platform{
+.box_accessorio img{
+    height: 250px;
+}
+
+.box_accessorio h2,h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.box_accessorio h3 {
     color: green;
     font-weight: bolder;
 }

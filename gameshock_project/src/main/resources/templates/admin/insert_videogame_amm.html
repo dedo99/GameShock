@@ -14,7 +14,7 @@
 	    
 	
 	    <section class="content_page">
-	        <h3>Insert Videogame</h3>
+	        <h1>Insert Videogame</h1>
 	        <form th:action="@{/admin/addVideogame}" method="post" th:object="${videogame}" enctype="multipart/form-data">
 	        	<div th:if="${#fields.hasGlobalErrors()}">
 	            	<p th:each="err : ${#fields.globalErrors()}" th:text="${err}" th:style="'color:red'" >...</p>
@@ -25,6 +25,9 @@
 	            <h6>Name:</h6>
 	            <input type="text" placeholder="Minecraft" th:field="*{name}">
 	            <h6 th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:style="'color:red'"> </h6>
+	            <h6>Edition:</h6>
+	            <input type="text" placeholder="Standard" th:field="*{edition}">
+	            <h6 th:if="${#fields.hasErrors('edition')}" th:errors="*{edition}" th:style="'color:red'"> </h6>
 	            <h6>Description:</h6>
 	            <textarea type="text" placeholder="Good" th:field="*{description}"></textarea>
 	            <h6>Rating:</h6>
@@ -54,7 +57,7 @@
 	            <h6>Image:</h6>
 	            <input type="file" placeholder="Image" name="file">
 	            <br>
-	            <input type="submit" name="Insert" value="Insert">
+	            <input  type="submit" name="Insert" value="Insert">
 	        </form>
 	    </section>
 	    

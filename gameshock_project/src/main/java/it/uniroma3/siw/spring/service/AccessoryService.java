@@ -13,6 +13,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import it.uniroma3.siw.spring.model.Accessory;
+import it.uniroma3.siw.spring.model.Platform;
 import it.uniroma3.siw.spring.repository.AccessoryRepository;
 
 @Service
@@ -62,6 +63,11 @@ public class AccessoryService {
 	public boolean alreadyExistsAccessory(Accessory accessory) {
 		Accessory a = this.getSingleAccessory(accessory.getCode());
 		return a != null;
+	}
+	
+	@Transactional
+	public List<Accessory> getAllAccessoriesByPlatform(Platform platform) {
+		return (List<Accessory>) this.accessoryrepository.findByPlatform(platform);
 	}
 	
 	
