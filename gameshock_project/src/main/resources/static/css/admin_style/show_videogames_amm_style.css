@@ -128,4 +128,16 @@ CONTENT PAGE
 	    flex-direction: column;
 	}
 	
+	.title_and_search form{
+	    margin: 0;
+	}
+	
+	.content_item  {
+		width: 365px;
+	}
+	
+	.img_item img {
+		height: 110px;
+	}
+	
 }

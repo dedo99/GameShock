@@ -80,3 +80,25 @@ CONTENT PAGE
 .content_page form input[type=file]{
     background-color: #ffffff8e;
 }
+
+@media (max-width: 768px) { 
+	
+	.content_page {
+		left: 0px;
+		width: 375px;
+	}
+	
+	.content_page h1{
+		margin-top: 20px;
+		width: 340px;
+	}
+	
+	.content_page form input[type=text]{
+    width: 350px;
+    
+	}
+
+	.content_page form textarea{
+    width: 350px;
+	}
+}
