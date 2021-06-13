@@ -42,7 +42,7 @@ public class AuthenticationController {
     		model.addAttribute("userDetails",userDetails);
             return "admin/home_amm";
         }
-    	return "index";
+    	return "login/amm";
     }
     
     @RequestMapping(value = { "/register" }, method = RequestMethod.GET)
