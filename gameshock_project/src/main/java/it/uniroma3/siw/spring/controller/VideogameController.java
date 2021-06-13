@@ -46,6 +46,12 @@ public class VideogameController {
 		return "details_videogame.html";
 	}
 	
+	@RequestMapping(value = "/researchVideogame", method = RequestMethod.POST)
+	public String researchVideogame(@RequestParam("param") String paramSearch, Model model) {
+		model.addAttribute("videogames", this.videogameService.searchVideogames(paramSearch));
+		return "videogames";
+	}
+	
 	/*************
 	 *** ADMIN ***
 	 *************/
@@ -84,7 +90,7 @@ public class VideogameController {
 	}
 	
 	@RequestMapping(value = "/admin/researchVideogame", method = RequestMethod.POST)
-	public String cercaVideogameAmm(@RequestParam("param") String paramSearch, Model model) {
+	public String researchVideogameAmm(@RequestParam("param") String paramSearch, Model model) {
 		model.addAttribute("videogames", this.videogameService.searchVideogames(paramSearch));
 		return "admin/show_videogames_amm";
 	}

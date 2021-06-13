@@ -14,8 +14,8 @@
 	    <section class="videogame_content">
 	        <div class="title_and_search">
 	            <h1>Videogames</h1>
-	            <form action="#">
-	                <input type="text" placeholder="ricerca nome videogame">
+	            <form th:action="@{/researchVideogame}" method="POST">
+	                <input type="text" name="param" placeholder="research videogame">
 	                <input type="submit" value="Search">
 	            </form>
 	        </div>

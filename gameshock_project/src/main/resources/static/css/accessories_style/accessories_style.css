@@ -48,7 +48,7 @@ COLLECTION ACCESSORY
 
 .title_and_search input[type=text]{
     border-radius: 10px;
-    height: 30px;
+    height: 33px;
     width: 200px;
     outline: none;
 }
@@ -59,9 +59,10 @@ COLLECTION ACCESSORY
 }
 
 .title_and_search input[type=submit]{
-    border-radius: 10px;
-    height: 30px;
-    width: 80px;
+    border-radius: 15px;
+    font-size: 20px;
+    height: 35px;
+    width: 85px;
     background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);;
     border: none;
     color: #fff;

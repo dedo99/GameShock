@@ -44,6 +44,12 @@ public class AccessoryController {
 		return "details_accessory";
 	}
 	
+	@RequestMapping(value = "/researchAccessory", method = RequestMethod.POST)
+	public String researchAccessory(@RequestParam("param") String paramSearch, Model model) {
+		model.addAttribute("accessories", this.accessoryService.searchAccessories(paramSearch));
+		return "accessories";
+	}
+	
 	/*************
 	 *** ADMIN ***
 	 *************/
@@ -82,7 +88,7 @@ public class AccessoryController {
 	}
 	
 	@RequestMapping(value = "/admin/researchAccessory", method = RequestMethod.POST)
-	public String cercaVideogameAmm(@RequestParam("param") String paramSearch, Model model) {
+	public String researchAccessoryAmm(@RequestParam("param") String paramSearch, Model model) {
 		model.addAttribute("accessories", this.accessoryService.searchAccessories(paramSearch));
 		return "admin/show_accessories_amm";
 	}
