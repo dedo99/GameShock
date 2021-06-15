@@ -1,0 +1,88 @@
+/* --------
+BACKGROUND
+-------------*/
+
+.background_page{
+    background: url(../../images/information_images/controller_neon.jpg);
+    background-size: cover;
+    padding-bottom: 40px;
+}
+
+/* --------
+TABLE 
+-------------*/
+
+table {
+    /*border-collapse: collapse;*/
+    /* border: 2px solid red; */
+    margin: auto;
+    letter-spacing: 1px;
+    border-spacing: 30px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#dove_siamo {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+caption p , #dove_siamo p{
+	font-size: 70px;
+    background-color: rgba(255, 255, 255, 0.671);
+    border-radius: 50px;
+    padding: 0px;
+    width: 700px;
+    color: green;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+.carta_sconti {
+    margin-top: -55px;
+}
+
+td.riga , th {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+td {
+    font-size: 30px;
+}
+
+.chiuso {
+    color: red;
+}
+
+@media (max-width: 768px){
+
+    table{
+		width:365px;
+		overflow-x: auto;
+		border-spacing: 10px;
+	}
+	
+	caption p, #dove_siamo p{
+    	font-size: 40px;
+    	width:365px;
+    }
+    
+    #dove_siamo p {
+		margin-top: 40px;
+	}
+	
+	.carta_sconti p {
+		margin-top: 60px;
+	}
+	
+	td.riga , th {
+    	font-size: 15px;
+    }
+    
+    td {
+    font-size: 15px;
+	}
+}

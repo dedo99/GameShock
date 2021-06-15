@@ -1,0 +1,109 @@
+/* ----------
+CONTENT PAGE
+-------------- */
+
+.content_page{
+    position: absolute;
+    top: 80px;
+    left: 260px;
+    height: auto;
+    width: calc(100% - 260px);
+    text-align: center;
+    padding: 50px;
+    background: url(../../images/admin_images/clash_controller.jpg) center center;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.content_page h1{
+	font-size: 60px;
+	font-family: 'Lobster', cursive;
+    background: -webkit-linear-gradient(rgba(219,70,252,1), rgba(63,94,251,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     margin-bottom: 15px;
+}
+
+.content_page h6{
+    width: auto;
+    background: #ffffff8e;
+    display: block;
+    color: green;
+    padding: 5px 10px;
+    margin: 20px 0px 5px 0px;
+    border-radius: 15px;
+}
+
+.content_page form{
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content_page form input[type=text]{
+    width: 500px;
+    height: 30px;
+}
+
+.content_page form textarea{
+    width: 500px;
+    height: 100px;
+}
+
+.content_page form input[type=text], textarea{
+    border-radius: 10px;
+    outline: none;
+    border: 1px dashed black;
+    color: rgba(63,94,251,1);
+}
+
+.content_page form input[type=text]:focus, textarea:focus{
+    border: 2px solid rgba(219,70,252,1);
+    background-color: rgb(226, 226, 226);
+    transition: 0.5s;
+}
+
+.content_page form input[type=submit]{
+    width: 110px;
+	height: 40px;
+	font-size: 25px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgba(219,70,252,1);
+    border: none;
+}
+
+.content_page form input[type=submit]:hover{
+    background-color: rgba(63,94,251,1);
+    transition: 0.5s;
+}
+
+.content_page form input[type=file]{
+    background-color: #ffffff8e;
+}
+
+@media (max-width: 768px) { 
+	
+	.content_page{
+		padding: 5px;
+		width: 100vw;
+		top: 80px;
+		left: 0px;
+	}
+	
+	.content_page h1{
+	    padding: 5px 10px;
+	    margin: 10px;
+	    font-size: 50px;
+	}
+	
+	.content_page form input[type=text]{
+    width: 350px;
+    
+	}
+
+	.content_page form textarea{
+    width: 350px;
+	}
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    	<head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.index})"></head>
+			<head th:insert="fragments/navbar.html :: navbar_css"> </head>
+			<head th:insert="fragments/footer.html :: footer_css"> </head>
+			<link th:href="@{/css/home_style/index_style.css}" rel="stylesheet">
+	</head>
+	<body>
+	
+	    <div class="img_subbackground"></div>
+	    <div class="page">
+	    	
+	        <header th:replace="fragments/navbar.html :: navbar"></header>
+	
+	        <div class="showcase">
+	            <div class="showcase_content_img">
+	                <h1>Come over to our side to win</h1>
+	            </div>
+	        </div>
+	
+	
+	        <video loop="true" autoplay="autoplay" muted>
+	            <source th:src="@{/images/home_images/gamers.mp4}" type="video/mp4" />
+	            Your browser does not support the video tag.
+	        </video>
+	
+	
+	        <section class="videogame_choice">
+	            <div class="img_videogame"></div>
+	            <div class="text_videogame">
+	                <h2>Videogames
+	                </h2>
+	                <p>Choose the right one for you and strive to become the strongest.
+                       We have a large selection of video games for all consoles</p>
+	            </div>
+	        </section>
+	    </div>
+	
+	
+	
+	    <section class="trasparent_platform_img"></section>
+	
+	
+	    <div class="page">
+	        <section class="accessory_choice">
+	            <div class="text_accessory">
+	                <h2>Accessories</h2>
+	                <p>Every single accessory can make a difference in every game.
+					   Choose the right one and you will see the results!
+					   We have a large selection of accessories for all consoles </p>
+	            </div>
+	            <div class="img_accessory"></div>
+	        </section>
+	
+	        <footer th:replace="fragments/footer.html :: footer"></footer>
+	        
+	    </div>
+	
+	    <script th:replace="fragments/base.html :: script"></script>
+	
+	
+	</body>
+</html>

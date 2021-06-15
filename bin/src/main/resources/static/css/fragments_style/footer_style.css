@@ -1,0 +1,26 @@
+/* ----------
+FOOTER
+-------------- */
+
+.footer{
+    height: 80px;
+    width: 100%;
+}
+
+.social_footer{
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social_footer a {
+    color: white;
+}
+
+.social_footer a:hover{
+    color: chartreuse;
+    transition: 0.5s all ease-in-out;
+}
