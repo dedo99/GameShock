@@ -16,6 +16,8 @@ CONTENT PAGE
 }
 
 .content_page h1{
+	font-size: 60px;
+	font-family: 'Lobster', cursive;
     background: -webkit-linear-gradient(rgba(219,70,252,1), rgba(63,94,251,1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -84,13 +86,14 @@ CONTENT PAGE
 @media (max-width: 768px) { 
 	
 	.content_page {
+		padding: 5px;
 		left: 0px;
 		width: 375px;
 	}
 	
 	.content_page h1{
-		margin-top: 20px;
-		width: 340px;
+	    padding: 5px 10px;
+	    margin: 10px;
 	}
 	
 	.content_page form input[type=text]{

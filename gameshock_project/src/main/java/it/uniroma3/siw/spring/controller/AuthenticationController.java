@@ -16,10 +16,13 @@ import it.uniroma3.siw.spring.service.CredentialsService;
 public class AuthenticationController {
 	
 	@Autowired
-	private CredentialsService credenzialiService;
+	private CredentialsService credentialsService;
 	
 	@RequestMapping(value = "/admin/homeAmm", method = RequestMethod.GET)
-	public String showHomeAmm() {
+	public String showHomeAmm(Model model) {
+		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    	Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
+    	model.addAttribute("admin",credentials.getAdmin());
 		return "admin/home_amm";
 	}
 	
@@ -37,9 +40,10 @@ public class AuthenticationController {
     public String defaultAfterLogin(Model model) {
         
     	UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    	Credentials credentials = credenzialiService.getCredentials(userDetails.getUsername());
+    	Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
     	if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
     		model.addAttribute("userDetails",userDetails);
+    		model.addAttribute("admin",credentials.getAdmin());
             return "admin/home_amm";
         }
     	return "login/amm";
@@ -51,7 +55,7 @@ public class AuthenticationController {
         Credentials c = Credentials.builder().username("pippo").password("pluto").role(Credentials.ADMIN_ROLE).build();
         Amministrator a = Amministrator.builder().name("Mario").surname("Rossi").build();
         c.setAdmin(a);
-        credenzialiService.saveCredentials(c);
+        credentialsService.saveCredentials(c);
         return "login_amm";
     }
     

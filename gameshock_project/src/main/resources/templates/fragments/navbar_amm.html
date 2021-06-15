@@ -15,7 +15,9 @@
 		        <div class="utility">
 		            <ul class="menu">
 		                <li class="flip_menu"><a href="home.html" th:href="@{'/logout'}">Exit</a></li>
-		                <li class="flip_menu"><a href="home_amm.html" th:href="@{'/admin/homeAmm'}">Hello, </a></li>
+		                <li class="flip_menu"><a href="home_amm.html" th:href="@{'/admin/homeAmm'}">Hello,
+		                	<span th:text="|${admin.name} ${admin.surname}">nome e cognome admin</span></a>
+	                	</li>
 		            </ul>
 		            <div class="hamburger_navdrawer"><i class="fas fa-bars fa-2x wt"></i></div>
 		        </div>

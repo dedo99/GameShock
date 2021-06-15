@@ -25,7 +25,8 @@ table {
 
 #dove_siamo {
 	text-align: center;
-	margin-left: 320px;
+	display: flex;
+	justify-content: center;
 }
 
 caption p , #dove_siamo p{

@@ -89,6 +89,7 @@ COLLECTION VIDEOGAME
 .box_videogame:hover {
 	-webkit-box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87); 
     box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87);
+    cursor:pointer;
 }
 
 .box_videogame img{
