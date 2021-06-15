@@ -1,5 +1,5 @@
 body, html{
-    background: rgb(0, 150, 220);
+   background: url(../../images/general_images/poster-modello-di-disegno-senza-soluzione-di-continuita-con-fulmini.jpg)
 }
 
 /* ----------
@@ -19,6 +19,9 @@ COLLECTION VIDEOGAME
 }
 
 .title_and_search h1{
+	background: -webkit-linear-gradient(rgba(63,94,251,1), rgba(219,70,252,1));
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
     font-family: 'Lobster', cursive;
 }
 
@@ -43,7 +46,7 @@ COLLECTION VIDEOGAME
     font-size: 20px;
     height: 35px;
     width: 85px;
-    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);;
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);
     border: none;
     color: #fff;
 }

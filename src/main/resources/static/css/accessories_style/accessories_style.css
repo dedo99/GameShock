@@ -3,7 +3,7 @@ Configurazioni base
 -------------- */
 
 body, html{
-    background: rgb(220,20,220);
+    background: url(../../images/general_images/poster-modello-di-disegno-senza-soluzione-di-continuita-con-fulmini.jpg)
 }
 
 @media (max-width: 768px){
@@ -39,6 +39,9 @@ COLLECTION ACCESSORY
 }
 
 .title_and_search h1{
+	background: -webkit-linear-gradient(rgba(63,94,251,1), rgba(219,70,252,1));
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
     font-family: 'Lobster', cursive;
 }
 

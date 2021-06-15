@@ -47,6 +47,7 @@ caption p , #dove_siamo p{
 td.riga , th {
     font-size: 40px;
     font-weight: bold;
+    font-style: italic;
 }
 
 td {

@@ -12,6 +12,7 @@ SHOWCASE ACCESSORIO
     margin-top: 80px;
     display: flex;
     width: 100%;
+    background-color: white;
 }
 
 .img_accessorio{
@@ -38,6 +39,7 @@ SHOWCASE ACCESSORIO
 	margin-bottom: 40px;
 }
 
+
 .new_price{
     border-radius: 20px;
     background: green;
@@ -52,18 +54,20 @@ SHOWCASE ACCESSORIO
 
 .more_info{
     font-family: 'Balsamiq Sans', cursive;
+    background-color: rgb(209,248,177);
 }
 
 .more_info p {
     font-size: 50px;
     display: inline-block;
     margin: 0px 50px;
-    color: blueviolet;
+    color: black;
 }
 
 .more_info h2 {
     display: inline-block;
     margin-left: 10px;
+    color: red;
 }
 
 .more_info p {
@@ -85,7 +89,7 @@ SHOWCASE ACCESSORIO
 
 .rating span {
 	font-size: 50px;
-    color: blueviolet;
+    color: black;
 }
 
 .description p{
