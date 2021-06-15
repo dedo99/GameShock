@@ -3,7 +3,7 @@ Configurazioni base
 -------------- */
 
 body, html{
-    background: rgb(50, 190, 100);
+    background: rgb(220,20,220);
 }
 
 @media (max-width: 768px){
