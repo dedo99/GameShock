@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.dettagliVideogame})"></head>
+		<head th:insert="fragments/navbar.html :: navbar_css"> </head>
+		<head th:insert="fragments/footer.html :: footer_css"> </head>
+		<link th:href="@{/css/videogame_style/details_videogame_style.css}" rel="stylesheet">
+	</head>
+	<body>
+	
+	    <header th:replace="fragments/navbar.html :: navbar"></header>
+	
+	    <section class="showcase_videogame">
+	        <div class="img_videogame">
+	            <img th:src="*{'data:image/jpeg;base64,'+ {videogame.image}}" alt="">
+	        </div>
+	        <div class="info_videogame">
+	            <h1 th:text="${videogame.name}">Nome Videogame</h1>
+	            <h3><span>Product Code: </span><span th:text="${videogame.code}">codice</span> </h3>
+	            <h3><span>Genre: </span><span th:text="${videogame.genre}">genere</span> </h3>
+	            <h3><span>Edition: </span><span th:text="${videogame.edition}">edizione</span> </h3>
+	            <h3><span>Release Date: </span><span th:text="${videogame.releaseDate}">data rilascio</span> </h3>
+	            <h3>
+	            	<span class="new_price">New Price:</span>
+	            	<span th:text="${videogame.newPrice}">100$</span>
+	            	<span>€</span>
+            	</h3>
+	            <h3>
+	            	<span class="old_price">Used Price:</span>
+	            	<span th:text="${videogame.usedPrice}">50$</span>
+	            	<span>€</span>
+            	</h3>
+	        </div>
+	    </section>
+	
+	    <section class="more_info">
+	    	<div class="content_specific platform">
+	            <h2>Platform:</h2>
+	            <p th:text="${videogame.platform.name}">playstation</p>
+	            <p>By</p>
+	            <p th:text="${videogame.platform.society.name}">sony</p>
+	        </div>
+	    	<div class="content_specific">
+	            <h2>Publisher:</h2>
+	            <p th:text="${videogame.publisher}"> Ubisoft</p>
+	        </div>
+	    	<div class="content_specific description">
+	            <h2>Description:</h2>
+	            <p th:text="${videogame.description}">Lorem ipsum dolor sit amet consectetur adipisicing 
+	                elit. Ad quas quasi, sed ducimus qui, dolorem totam,
+	                possimus atque vero hic accusantium assumenda non 
+	                fugiat perspiciatis ipsum distinctio est ea dolore.
+	            </p>
+	        </div>
+	        <div class="content_specific">
+	            <h2>Pegi:</h2>
+	            <p th:text="${videogame.pegi}">5</p>
+	        </div>
+	        <div class="content_specific rating">
+	            <h2>Rating:</h2>
+	            <p th:text="${videogame.rating}">5</p>
+	            <span>/10</span>
+	        </div>
+	    </section>
+	
+	
+	    <section class="recommended">
+	        <h1>You may also like...</h1>
+	
+	        <div class="recommended_products">
+	            <div class="box_recommended_products" th:each="videogameRec : ${videogamesRec}">
+	                <a href="dettagli_videogame.html" th:href="@{'/detailsVideogame/' + ${videogameRec.code}}">
+	                	<h2 th:text="${videogameRec.name}">Nome Gioco</h2>
+	                    <img th:src="*{'data:image/jpeg;base64,'+ {videogameRec.image}}" alt="">
+	                    <h3 th:text="${videogameRec.platform.name}">playstation</h3>
+	                </a>
+	            </div>
+	
+	    </section>
+	
+	
+	    <footer th:replace="fragments/footer.html :: footer"></footer>
+	
+	    <script th:replace="fragments/base.html :: script"></script>
+	    
+	</body>
+</html>

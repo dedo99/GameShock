@@ -1,0 +1,204 @@
+
+body, html{
+    background: rgb(50, 190, 100);
+}
+
+/* ----------
+SHOWCASE ACCESSORIO
+-------------- */
+
+.showcase_accessorio{
+    border-bottom: 2px solid gray;
+    margin-top: 80px;
+    display: flex;
+    width: 100%;
+}
+
+.img_accessorio{
+    border-right: 2px solid grey;
+    width: 50%;
+    text-align: center;
+     padding-top: 10px;
+}
+
+.img_accessorio img{
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.info_accessorio{
+    width: 50%;
+    text-align: center;
+    /* border: 2px solid green; */
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.info_accessorio h1 {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.new_price{
+    border-radius: 20px;
+    background: green;
+    padding: 7px;
+}
+
+.old_price{
+    border-radius: 20px;
+    background: red;
+    padding: 7px;
+}
+
+.more_info{
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.more_info p {
+    font-size: 50px;
+    display: inline-block;
+    margin: 0px 50px;
+    color: blueviolet;
+}
+
+.more_info h2 {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.more_info p {
+	margin-left: 25px;
+}
+
+.description h2{
+	display: block;
+	margin-bottom: 15px;
+}
+
+.accessory p {
+	margin-right: 0px;
+}
+
+.rating p {
+	margin-right: 0px;
+}
+
+.rating span {
+	font-size: 50px;
+    color: blueviolet;
+}
+
+.description p{
+	margin-bottom: 10px;
+}
+
+.content_specific{
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+
+@media (max-width: 768px){
+    .showcase_accessorio {
+        flex-wrap: wrap;
+    }
+
+    .img_accessorio{
+        min-width: none;
+        width: 100%;
+    }
+
+    .img_accessorio img{
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 90%;
+        height: 100%;
+    }
+
+    .info_accessorio{
+        width: 100%;
+    }
+
+    .more_info p {
+        font-size: 30px;
+    }
+}
+
+/* ----------
+RECOMMENDED PRODUCTS
+-------------- */
+
+.recommended{
+    /* border: 2px solid green; */
+    background: url(../../images/general_images/controller_xbox.jpg);
+    background-size: cover;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.recommended h1{
+    color: red;
+    background: rgba(255, 255, 255, 0.753);
+    width: 900px;
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 20px;
+    padding: 10px 0px;
+}
+
+.recommended_products{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* border: 3px solid red; */
+    height: auto;
+}
+
+.box_recommended_products{
+    border: 1px solid gray;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 300px;
+    width: 25%;
+    min-width: 300px;
+    margin: 50px 20px;
+    border-radius: 10px;
+}
+
+.box_recommended_products img{
+    align-items: center;
+    height: 250px;
+}
+
+.box_recommended_products:hover {
+	-webkit-box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87); 
+    box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87);
+}
+
+.box_recommended_products h2,h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.box_recommended_products h3 {
+    color: green;
+    font-weight: bolder;
+}
+
+.box_recommended_products a{
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 768px){
+
+    .recommended h1{
+        width: auto;
+    }
+
+}
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.dettagliAccessorio})"></head>
+		<head th:insert="fragments/navbar.html :: navbar_css"> </head>
+		<head th:insert="fragments/footer.html :: footer_css"> </head>
+		<link th:href="@{/css/accessories_style/details_accessory_style.css}" rel="stylesheet">
+	</head>
+	<body>
+	
+		<header th:replace="fragments/navbar.html :: navbar"></header>
+	
+	    <section class="showcase_accessorio">
+	        <div class="img_accessorio">
+	            <img th:src="*{'data:image/jpeg;base64,'+ {accessory.image}}" alt="">
+	        </div>
+	        <div class="info_accessorio">
+	            <h1 th:text="${accessory.name}">Nome Accessorio</h1>
+	            <h3><span>Product Code: </span><span th:text="${accessory.code}">codice</span> </h3>
+	            <h3><span>Category: </span><span th:text="${accessory.category}">categoria</span> </h3>
+	            <h3><span>Color: </span><span th:text="${accessory.color}">colore</span> </h3>
+	            <h3>
+	            	<span class="new_price">New Price:</span>
+		            <span th:text="${accessory.newPrice}">100$</span>
+		            <span>€</span>
+	            </h3>
+		        <h3>
+		            <span class="old_price">Used Price:</span>
+		            <span th:text="${accessory.usedPrice}">50$</span>
+		            <span>€</span>
+	            </h3>
+	        </div>
+	    </section>
+	
+	    <section class="more_info">
+		    <div class="content_specific accessory">
+		    	<h2>Platform:</h2>
+		        <p th:text="${accessory.platform.name}">playstation</p>
+	            <p>By</p>
+	            <p th:text="${accessory.platform.society.name}">sony</p>
+	        </div>
+	    	<div class="content_specific description">
+	            <h2>Description:</h2>
+	            <p th:text="${accessory.description}">Lorem ipsum dolor sit amet consectetur adipisicing 
+		                	elit. Ad quas quasi, sed ducimus qui, dolorem totam,
+		                	possimus atque vero hic accusantium assumenda non 
+		                	fugiat perspiciatis ipsum distinctio est ea dolore.
+	            </p>
+	        </div>
+	        <div class="content_specific rating">
+	            <h2>Rating:</h2>
+	            <p th:text="${accessory.rating}">5</p>
+	            <span>/10</span>
+	        </div>
+	    </section>
+	
+	    <section class="recommended">
+	        <h1>You may also like...</h1>
+	
+	        <div class="recommended_products">
+	            <div class="box_recommended_products" th:each="accessoryRec : ${accessoriesRec}">
+	                <a href="dettagli_accessorio.html" th:href="@{'/detailsAccessory/' + ${accessoryRec.code}}">
+	                	<h2 th:text="${accessoryRec.name}">Nome Gioco</h2>
+	                    <img th:src="*{'data:image/jpeg;base64,'+ {accessoryRec.image}}" alt="">
+	                    <h3 th:text="${accessoryRec.platform.name}">playstation</h3>
+	                </a>
+	            </div>
+	
+	    </section>
+	
+	    <footer th:replace="fragments/footer.html :: footer"></footer>
+	
+	    <script th:replace="fragments/base.html :: script"></script>
+	    
+	</body>
+</html>
