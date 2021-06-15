@@ -95,6 +95,7 @@ CONTENT PAGE
 	.content_page h1{
 	    padding: 5px 10px;
 	    margin: 10px;
+	    font-size: 50px;
 	}
 	
 	.content_page form input[type=text]{

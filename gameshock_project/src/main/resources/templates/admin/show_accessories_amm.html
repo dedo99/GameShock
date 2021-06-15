@@ -28,13 +28,16 @@
 	                <div class="img_item">
 	                    <img th:src="*{'data:image/jpeg;base64,'+{accessory.image}}" alt="">
 	                </div>
-	                <h5><span>Name: </span><span th:text="${accessory.name}">nomeprova</span></h5>
-	                <h5><span>Platform: </span><span th:text="${accessory.platform.name}">nomepiattaforma</span></h5>					
+	                <h6><span>Name: </span><span th:text="${accessory.name}">nomeprova</span></h6>
+	                <h6><span>Code: </span><span th:text="${accessory.code}">codiceprova</span></h6>
+	                <h6><span>Platform: </span><span th:text="${accessory.platform.name}">nomepiattaforma</span></h6>					
 	            </a>
 	            <a class="cestino" th:href="@{'/admin/deleteAccessoryAmm/' + ${accessory.code}}"><img th:src="@{/images/general_images/basket_icon.png}" alt=""></a>
 	        </div>
 
 	    </section>
+	    
+	    <script th:replace="fragments/base.html :: script"></script>
 	
 	</body>
 </html>
