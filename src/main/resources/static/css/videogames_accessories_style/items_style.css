@@ -16,6 +16,7 @@ COLLECTION VIDEOGAME
     display: flex;
     align-items: center;
     justify-content: space-around;
+    height: 115px;
 }
 
 .title_and_search h1{
@@ -68,6 +69,7 @@ COLLECTION VIDEOGAME
     flex-wrap: wrap;
     /* border: 3px solid red; */
     height: auto;
+    min-height: calc(100vh - 275px);
 }
 
 .box_item{
@@ -76,7 +78,7 @@ COLLECTION VIDEOGAME
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto;
+    height: fit-content;
     min-height: 300px;
     width: 25%;
     min-width: 300px;
@@ -114,7 +116,12 @@ COLLECTION VIDEOGAME
     .title_and_search{
         justify-content: center;
         flex-wrap: wrap;
+        height: 151px;
     }
+    
+    .collection_item{
+	    min-height: calc(100vh - 311px);
+	}
 
     .title_and_search form{
         margin: 0px;
