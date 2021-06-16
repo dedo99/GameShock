@@ -23,8 +23,6 @@ import it.uniroma3.siw.spring.service.VideogameService;
 @Controller
 public class VideogameController {
 	
-
-	
 	@Autowired
 	private VideogameService videogameService;
 	

@@ -1,8 +1,13 @@
+
+body, html{
+    background: rgb(50, 190, 100);
+}
+
 /* ----------
-SHOWCASE VIDEOGAME
+SHOWCASE ACCESSORIO
 -------------- */
 
-.showcase_videogame{
+.showcase_accessorio{
     border-bottom: 2px solid gray;
     margin-top: 80px;
     display: flex;
@@ -10,30 +15,35 @@ SHOWCASE VIDEOGAME
     background-color: white;
 }
 
-.img_videogame{
+.img_accessorio{
     border-right: 2px solid grey;
     width: 50%;
     text-align: center;
-    padding-top: 10px;
+     padding-top: 10px;
 }
 
-.img_videogame img{
+.img_accessorio img{
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.info_videogame{
+.info_accessorio{
     width: 50%;
     text-align: center;
     /* border: 2px solid green; */
     font-family: 'Balsamiq Sans', cursive;
 }
 
+.info_accessorio h1 {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+
 .new_price{
     border-radius: 20px;
     background: green;
     padding: 7px;
-    text-align: center;
 }
 
 .old_price{
@@ -44,7 +54,7 @@ SHOWCASE VIDEOGAME
 
 .more_info{
     font-family: 'Balsamiq Sans', cursive;
-    background-color: rgb(105,168,199);
+    background-color: rgb(209,248,177);
 }
 
 .more_info p {
@@ -69,7 +79,7 @@ SHOWCASE VIDEOGAME
 	margin-bottom: 15px;
 }
 
-.platform p {
+.accessory p {
 	margin-right: 0px;
 }
 
@@ -91,30 +101,36 @@ SHOWCASE VIDEOGAME
     border-bottom: 2px solid gray;
 }
 
+
 @media (max-width: 768px){
-    .showcase_videogame {
+    .showcase_accessorio {
         flex-wrap: wrap;
     }
 
-    .img_videogame{
+    .img_accessorio{
         min-width: none;
         width: 100%;
     }
 
-    .img_videogame img{
+    .img_accessorio img{
         background-repeat: no-repeat;
         background-size: contain;
         width: 90%;
         height: 100%;
     }
 
-    .info_videogame{
+    .info_accessorio{
         width: 100%;
     }
 
     .more_info p {
         font-size: 30px;
     }
+    
+    .rating span {
+		font-size: 30px;
+    	color: black;
+	}
 }
 
 /* ----------
@@ -123,7 +139,7 @@ RECOMMENDED PRODUCTS
 
 .recommended{
     /* border: 2px solid green; */
-    background: url(../../images/general_images/controller_ps4.jpg);
+    background: url(../../images/general_images/controller_xbox.jpg);
     background-size: cover;
     text-align: center;
     padding-top: 40px;
@@ -164,7 +180,7 @@ RECOMMENDED PRODUCTS
 
 .box_recommended_products img{
     align-items: center;
-    height: 270px;
+    height: 250px;
 }
 
 .box_recommended_products:hover {
@@ -194,3 +210,4 @@ RECOMMENDED PRODUCTS
     }
 
 }
+

@@ -4,14 +4,14 @@
 	    <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.videogame})"></head>
 		<head th:insert="fragments/navbar.html :: navbar_css"> </head>
 		<head th:insert="fragments/footer.html :: footer_css"> </head>
-	    <link th:href="@{/css/videogame_style/videogames_style.css}" rel="stylesheet">
+	    <link th:href="@{/css/videogames_accessories_style/items_style.css}" rel="stylesheet">
 	</head>
 	<body>
 	
 	    <header th:replace="fragments/navbar.html :: navbar"></header>
 	
 	
-	    <section class="videogame_content">
+	    <section class="item_content">
 	        <div class="title_and_search">
 	            <h1>Videogames</h1>
 	            <form th:action="@{/researchVideogame}" method="POST">
@@ -20,9 +20,9 @@
 	            </form>
 	        </div>
 	
-	        <div class="collection_videogame">
+	        <div class="collection_item">
 	        
-	            <div class="box_videogame" th:each="videogame : ${videogames}">
+	            <div class="box_item" th:each="videogame : ${videogames}">
 	                <a href="dettagli_videogame.html" th:href="@{'/detailsVideogame/' + ${videogame.code}}">
 	                	<h2 th:text="${videogame.name}">Nome Gioco</h2>
 	                    <img th:src="*{'data:image/jpeg;base64,'+ {videogame.image}}" alt="">

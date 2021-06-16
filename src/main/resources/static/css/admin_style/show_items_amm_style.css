@@ -59,7 +59,8 @@ CONTENT PAGE
 
 
 .img_item img{
-	height: 100px;
+	height: 95px;
+	border-radius: 10px;
 }
 
 
@@ -111,6 +112,7 @@ CONTENT PAGE
 	background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);;
 	border: none;
 	color: #fff;
+	margin-top: 5px;
 }
 
 

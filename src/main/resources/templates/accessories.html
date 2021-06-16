@@ -4,14 +4,14 @@
 	    <head th:insert="fragments/base.html :: headerfiles(title=#{pageTitle.accessori})"></head>
 		<head th:insert="fragments/navbar.html :: navbar_css"> </head>
 		<head th:insert="fragments/footer.html :: footer_css"> </head>
-		<link th:href="@{/css/accessories_style/accessories_style.css}" rel="stylesheet">
+		<link th:href="@{/css/videogames_accessories_style/items_style.css}" rel="stylesheet">
 	</head>
 	<body>
 	
 	    <header th:replace="fragments/navbar.html :: navbar"></header>
 	
 	
-	    <section class="accessori_content">
+	    <section class="item_content">
 	        <div class="title_and_search">
 	            <h1>Accessories</h1>
 	            <form th:action="@{/researchAccessory}" method="POST">
@@ -20,9 +20,9 @@
 	            </form>
 	        </div>
 	
-	        <div class="collection_accessori">
+	        <div class="collection_item">
 	        
-	            <div class="box_accessorio" th:each="accessory : ${accessories}">
+	            <div class="box_item" th:each="accessory : ${accessories}">
 	                <a href="dettagli_accessorio.html" th:href="@{'/detailsAccessory/' + ${accessory.code}}">
 	                    <h2 th:text="${accessory.name}">Nome Accessorio</h2>
 	                    <img th:src="*{'data:image/jpeg;base64,'+ {accessory.image}}" alt="">

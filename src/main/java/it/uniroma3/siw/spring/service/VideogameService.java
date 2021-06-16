@@ -75,7 +75,7 @@ public class VideogameService {
 		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 		if(fileName.contains(".."))
 		{
-			System.out.println("not a a valid file");
+			System.out.println("not a valid file");
 		}
 		try {
 			videogame.setImage(Base64.getEncoder().encodeToString(file.getBytes()));

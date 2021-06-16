@@ -35,6 +35,7 @@ public abstract class Item {
 	@Exclude
 	private Float usedPrice;
 	
+	@Exclude
 	@Lob
 	private String image;
 }

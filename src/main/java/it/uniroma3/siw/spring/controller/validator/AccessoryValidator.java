@@ -38,9 +38,6 @@ public class AccessoryValidator implements Validator{
 			if(this.accessoryService.alreadyExistsAccessory(accessory)) {
 				errors.reject("accessorioDuplicato");
 			}
-//			if(!this.platformService.getAllPlatforms().contains(videogame.getPlatform())) {
-//			errors.reject("piattaformaNonEsistente");
-//		}
 			if(rating > 10 || rating < 0) {
 				errors.reject("ratingNonValido");
 			}

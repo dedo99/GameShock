@@ -1,33 +1,13 @@
-/* ----------
-Configurazioni base
--------------- */
-
 body, html{
-    background: url(../../images/general_images/poster-modello-di-disegno-senza-soluzione-di-continuita-con-fulmini.jpg)
+   background: url(../../images/general_images/poster-modello-di-disegno-senza-soluzione-di-continuita-con-fulmini.jpg)
 }
-
-@media (max-width: 768px){
-
-    body{
-        margin: 0px;
-    }
-
-    h1{font-size: 40px;}
-    h2{font-size: 30px;}
-    h3{font-size: 25px;}
-    h4{font-size: 15px;}
-    h5{font-size: 10px;}
-    h6{font-size: 5px;}
-}
-
-
 
 /* ----------
-COLLECTION ACCESSORY
+COLLECTION VIDEOGAME
 -------------- */
 
 
-.accessori_content{
+.item_content{
     text-align: center;
     margin-top: 80px;
 }
@@ -66,21 +46,23 @@ COLLECTION ACCESSORY
     font-size: 20px;
     height: 35px;
     width: 85px;
-    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);;
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(219,70,252,1) 100%);
     border: none;
     color: #fff;
 }
+
 
 .title_and_search input[type=submit]:hover{
     border: 3px solid orange;
 }
 
-.accessori_content h1{
+
+.item_content h1{
     margin: 0px;
     padding: 20px 0px;
 }
 
-.collection_accessori{
+.collection_item{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -88,7 +70,7 @@ COLLECTION ACCESSORY
     height: auto;
 }
 
-.box_accessorio{
+.box_item{
     border: 3px solid blue;
     background: white;
     display: flex;
@@ -102,26 +84,27 @@ COLLECTION ACCESSORY
     border-radius: 10px;
 }
 
-.box_accessorio a{
+.box_item a{
     text-decoration: none;
     color: black;
 }
 
-.box_accessorio:hover {
+.box_item:hover {
 	-webkit-box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87); 
     box-shadow: 5px 5px 29px 9px rgba(0,0,0,0.87);
+    cursor:pointer;
 }
 
-.box_accessorio img{
-    height: 250px;
+.box_item img{
+    height: 270px;
 }
 
-.box_accessorio h2,h3 {
+.box_item h2,h3 {
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
 
-.box_accessorio h3 {
+.box_item h3 {
     color: green;
     font-weight: bolder;
 }
@@ -137,7 +120,8 @@ COLLECTION ACCESSORY
         margin: 0px;
     }
 
-    .box_accessorio{
+    .box_item{
         margin: 20px 20px;
     }
 }
+
