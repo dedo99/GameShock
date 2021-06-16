@@ -27,6 +27,8 @@ HEADER
 
 .logo h2{
     font-size: 40px;
+    margin-left: 20px;
+    margin-right: 5px;
 }
 
 .img_shock{
@@ -34,6 +36,14 @@ HEADER
     width: 50px;
     background: url();
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_shock img{
+	height: 60px;
+	margin: 0px 0px;
 }
 
 .menu{
