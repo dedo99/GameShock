@@ -24,16 +24,16 @@ public class VideogameValidator implements Validator{
 	public void validate(Object target, Errors errors) {
 		Videogame videogame = (Videogame) target;
 		Float rating = videogame.getRating();
-		ValidationUtils.rejectIfEmpty(errors, "code", "required");
-		ValidationUtils.rejectIfEmpty(errors, "name", "required");
-		ValidationUtils.rejectIfEmpty(errors, "rating", "required");
-		ValidationUtils.rejectIfEmpty(errors, "newPrice", "required");
-		ValidationUtils.rejectIfEmpty(errors, "usedPrice", "required");
-		ValidationUtils.rejectIfEmpty(errors, "releaseDate", "required");
-		ValidationUtils.rejectIfEmpty(errors, "genre", "required");
-		ValidationUtils.rejectIfEmpty(errors, "pegi", "required");
-		ValidationUtils.rejectIfEmpty(errors, "publisher", "required");
-		ValidationUtils.rejectIfEmpty(errors, "platform", "required");
+		ValidationUtils.rejectIfEmpty(errors, "code", "required.videogame.code");
+		ValidationUtils.rejectIfEmpty(errors, "name", "required.videogame.name");
+		ValidationUtils.rejectIfEmpty(errors, "rating", "required.videogame.rating");
+		ValidationUtils.rejectIfEmpty(errors, "newPrice", "required.videogame.newPrice");
+		ValidationUtils.rejectIfEmpty(errors, "usedPrice", "required.videogame.usedPrice");
+		ValidationUtils.rejectIfEmpty(errors, "releaseDate", "required.videogame.dateRelease");
+		ValidationUtils.rejectIfEmpty(errors, "genre", "required.videogame.genre");
+		ValidationUtils.rejectIfEmpty(errors, "pegi", "required.videogame.pegi");
+		ValidationUtils.rejectIfEmpty(errors, "publisher", "required.videogame.publisher");
+		ValidationUtils.rejectIfEmpty(errors, "platform", "required.videogame.platform");
 		
 		
 		if(!errors.hasErrors()) {

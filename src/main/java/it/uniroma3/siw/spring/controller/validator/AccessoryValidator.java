@@ -24,14 +24,14 @@ public class AccessoryValidator implements Validator{
 	public void validate(Object target, Errors errors) {
 		Accessory accessory = (Accessory) target;
 		Float rating = accessory.getRating();
-		ValidationUtils.rejectIfEmpty(errors, "code", "required");
-		ValidationUtils.rejectIfEmpty(errors, "name", "required");
-		ValidationUtils.rejectIfEmpty(errors, "rating", "required");
-		ValidationUtils.rejectIfEmpty(errors, "newPrice", "required");
-		ValidationUtils.rejectIfEmpty(errors, "usedPrice", "required");
-		ValidationUtils.rejectIfEmpty(errors, "color", "required");
-		ValidationUtils.rejectIfEmpty(errors, "category", "required");
-		ValidationUtils.rejectIfEmpty(errors, "platform", "required");
+		ValidationUtils.rejectIfEmpty(errors, "code", "required.accessorio.code");
+		ValidationUtils.rejectIfEmpty(errors, "name", "required.accessorio.name");
+		ValidationUtils.rejectIfEmpty(errors, "rating", "required.accessorio.rating");
+		ValidationUtils.rejectIfEmpty(errors, "newPrice", "required.accessorio.newPrice");
+		ValidationUtils.rejectIfEmpty(errors, "usedPrice", "required.accessorio.usedPrice");
+		ValidationUtils.rejectIfEmpty(errors, "color", "required.accessorio.color");
+		ValidationUtils.rejectIfEmpty(errors, "category", "required.accessorio.category");
+		ValidationUtils.rejectIfEmpty(errors, "platform", "required.accessorio.platform");
 		
 		
 		if(!errors.hasErrors()) {
