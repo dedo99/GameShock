@@ -43,7 +43,11 @@
 	            <input type="date" th:field="*{releaseDate}">
 	            <h6 th:if="${#fields.hasErrors('releaseDate')}" th:errors="*{releaseDate}" th:style="'color:red'"> </h6>
 	            <h6>Genre:</h6>
-	            <input type="text" placeholder="SPORT" th:field="*{genre}">
+	            <!--<input type="text" placeholder="SPORT" th:field="*{genre}"> -->
+	            <select th:field="*{genre}">
+	            	<option value="">Choose the genre</option>
+	            	<option th:each="genre : ${genres}" th:value="${genre}" th:text="${genre}"></option>
+	            </select>
 	            <h6 th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}" th:style="'color:red'"> </h6>
 	            <h6>Pegi:</h6>
 	            <input type="text" placeholder="3" th:field="*{pegi}">
@@ -52,7 +56,11 @@
 	            <input type="text" placeholder="EA sports" th:field="*{publisher}">
 	            <h6 th:if="${#fields.hasErrors('publisher')}" th:errors="*{publisher}" th:style="'color:red'"> </h6>
 	            <h6>Platform:</h6>
-	            <input type="text" placeholder="PlayStation 4" th:field="*{platform.name}">
+	            <!--<input type="text" placeholder="PlayStation 4" th:field="*{platform.name}"> -->
+	            <select th:field="*{platform.name}">
+	            	<option value="">Choose the platform</option>
+	            	<option th:each="platform : ${platforms}" th:value="${platform.name}" th:text="${platform.name}"></option>
+	            </select>
 	            <h6 th:if="${#fields.hasErrors('platform')}" th:errors="*{platform}" th:style="'color:red'"> </h6>
 	            <h6>Image:</h6>
 	            <input type="file" placeholder="Image" name="file">

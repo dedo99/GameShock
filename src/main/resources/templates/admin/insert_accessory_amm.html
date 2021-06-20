@@ -39,10 +39,18 @@
 	            <input type="text" placeholder="Red" th:field="*{color}">
 	            <h6 th:if="${#fields.hasErrors('color')}" th:errors="*{color}" th:style="'color:red'"> </h6>
 	            <h6>Category:</h6>
-	            <input type="text" placeholder="CONTROLLER" th:field="*{category}">
+	            <!--<input type="text" placeholder="CONTROLLER" th:field="*{category}">-->
+	            <select th:field="*{category}">
+	            	<option value="">Choose the category...</option>
+	            	<option th:each="category : ${categories}" th:value="${category}" th:text="${category}"></option>
+	            </select>
 	            <h6 th:if="${#fields.hasErrors('category')}" th:errors="*{category}" th:style="'color:red'"> </h6>
 	            <h6>Platform:</h6>
-	            <input type="text" placeholder="PlayStation 4" th:field="*{platform.name}">
+	            <!-- <input type="text" placeholder="PlayStation 4" th:field="*{platform.name}"> -->
+	            <select th:field="*{platform.name}">
+	            	<option value="">Choose the platform</option>
+	            	<option th:each="platform : ${platforms}" th:value="${platform.name}" th:text="${platform.name}"></option>
+	            </select>
 	            <h6 th:if="${#fields.hasErrors('platform')}" th:errors="*{platform}" th:style="'color:red'"> </h6>
 	            <h6>Image:</h6>
 	            <input type="file" placeholder="Image" name="file">

@@ -15,10 +15,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import it.uniroma3.siw.spring.controller.validator.AccessoryValidator;
 import it.uniroma3.siw.spring.model.Accessory;
+import it.uniroma3.siw.spring.model.Category;
 import it.uniroma3.siw.spring.model.Credentials;
 import it.uniroma3.siw.spring.model.Platform;
 import it.uniroma3.siw.spring.service.AccessoryService;
 import it.uniroma3.siw.spring.service.CredentialsService;
+import it.uniroma3.siw.spring.service.PlatformService;
 
 @Controller
 public class AccessoryController {
@@ -31,6 +33,9 @@ public class AccessoryController {
 	
 	@Autowired
 	private AccessoryValidator accessoryValidator;
+	
+	@Autowired
+	private PlatformService platformService;
 	
 	/************
 	 *** HOME ***
@@ -67,6 +72,8 @@ public class AccessoryController {
     	Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
     	model.addAttribute("admin",credentials.getAdmin());
 		model.addAttribute("accessory", new Accessory());
+		model.addAttribute("categories", Category.values());
+		model.addAttribute("platforms", this.platformService.getAllPlatforms());
 		return "admin/insert_accessory_amm";
 	}
 	
@@ -84,6 +91,8 @@ public class AccessoryController {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     	Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
     	model.addAttribute("admin",credentials.getAdmin());
+    	model.addAttribute("categories", Category.values());
+    	model.addAttribute("platforms", this.platformService.getAllPlatforms());
     	return "admin/insert_accessory_amm";
     }
 	
